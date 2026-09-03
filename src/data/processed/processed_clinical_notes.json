@@ -1,0 +1,252 @@
+[
+    {
+        "id": "N001",
+        "original_text": "45 year old male with fever and productive cough for five days. Diagnosed with pneumonia. Started on amoxicillin.",
+        "normalized_text": "45 year old male with fever and productive cough for five days. diagnosed with pneumonia. started on amoxicillin."
+    },
+    {
+        "id": "N002",
+        "original_text": "30 year old female presenting with headache, neck stiffness and fever. Impression meningitis. Given ceftriaxone.",
+        "normalized_text": "30 year old female presenting with headache, neck stiffness and fever. impression meningitis. given ceftriaxone."
+    },
+    {
+        "id": "N003",
+        "original_text": "60 year old male with chest pain radiating to left arm. Diagnosed myocardial infarction. Started aspirin and atorvastatin.",
+        "normalized_text": "60 year old male with chest pain radiating to left arm. diagnosed myocardial infarction. started aspirin and atorvastatin."
+    },
+    {
+        "id": "N004",
+        "original_text": "25 year old female with dysuria and lower abdominal pain. Diagnosed urinary tract infection. Prescribed ciprofloxacin.",
+        "normalized_text": "25 year old female with dysuria and lower abdominal pain. diagnosed urinary tract infection. prescribed ciprofloxacin."
+    },
+    {
+        "id": "N005",
+        "original_text": "50 year old male with cough, weight loss and night sweats. Suspected tuberculosis. Started rifampicin and isoniazid.",
+        "normalized_text": "50 year old male with cough, weight loss and night sweats. suspected tuberculosis. started rifampicin and isoniazid."
+    },
+    {
+        "id": "N006",
+        "original_text": "70 year old female with shortness of breath and wheezing. Diagnosed asthma exacerbation. Given salbutamol nebulization.",
+        "normalized_text": "70 year old female with shortness of breath and wheezing. diagnosed asthma exacerbation. given salbutamol nebulization."
+    },
+    {
+        "id": "N007",
+        "original_text": "5 year old male with fever, vomiting and diarrhea. Diagnosed gastroenteritis. Started ORS.",
+        "normalized_text": "5 year old male with fever, vomiting and diarrhea. diagnosed gastroenteritis. started ors."
+    },
+    {
+        "id": "N008",
+        "original_text": "35 year old female with sore throat and fever. Diagnosed tonsillitis. Started azithromycin.",
+        "normalized_text": "35 year old female with sore throat and fever. diagnosed tonsillitis. started azithromycin."
+    },
+    {
+        "id": "N009",
+        "original_text": "55 year old male with polyuria and polydipsia. Diagnosed diabetes mellitus. Started metformin.",
+        "normalized_text": "55 year old male with polyuria and polydipsia. diagnosed diabetes mellitus. started metformin."
+    },
+    {
+        "id": "N010",
+        "original_text": "40 year old female with severe headache and blurred vision. Diagnosed migraine. Given paracetamol.",
+        "normalized_text": "40 year old female with severe headache and blurred vision. diagnosed migraine. given paracetamol."
+    },
+    {
+        "id": "N011",
+        "original_text": "28 year old male with fever and cough. Chest exam suggest pneumonia. Started azithromycin.",
+        "normalized_text": "28 year old male with fever and cough. chest exam suggest pneumonia. started azithromycin."
+    },
+    {
+        "id": "N012",
+        "original_text": "62 year old female with chest tightness and shortness of breath. Diagnosed myocardial infarction. Given aspirin.",
+        "normalized_text": "62 year old female with chest tightness and shortness of breath. diagnosed myocardial infarction. given aspirin."
+    },
+    {
+        "id": "N013",
+        "original_text": "22 year old female with burning urination. Diagnosed urinary tract infection. Given nitrofurantoin.",
+        "normalized_text": "22 year old female with burning urination. diagnosed urinary tract infection. given nitrofurantoin."
+    },
+    {
+        "id": "N014",
+        "original_text": "48 year old male with night sweats and chronic cough. Diagnosed tuberculosis. Started rifampicin, isoniazid.",
+        "normalized_text": "48 year old male with night sweats and chronic cough. diagnosed tuberculosis. started rifampicin, isoniazid."
+    },
+    {
+        "id": "N015",
+        "original_text": "10 year old male with vomiting and diarrhea. Diagnosed gastroenteritis. Given ORS.",
+        "normalized_text": "10 year old male with vomiting and diarrhea. diagnosed gastroenteritis. given ors."
+    },
+    {
+        "id": "N016",
+        "original_text": "33 year old female with wheezing and shortness of breath. Asthma exacerbation. Given salbutamol.",
+        "normalized_text": "33 year old female with wheezing and shortness of breath. asthma exacerbation. given salbutamol."
+    },
+    {
+        "id": "N017",
+        "original_text": "65 year old male with fever and headache. Suspected meningitis. Started ceftriaxone.",
+        "normalized_text": "65 year old male with fever and headache. suspected meningitis. started ceftriaxone."
+    },
+    {
+        "id": "N018",
+        "original_text": "52 year old female with high blood sugar. Diagnosed diabetes mellitus. Started metformin.",
+        "normalized_text": "52 year old female with high blood sugar. diagnosed diabetes mellitus. started metformin."
+    },
+    {
+        "id": "N019",
+        "original_text": "38 year old male with sore throat. Diagnosed tonsillitis. Started azithromycin.",
+        "normalized_text": "38 year old male with sore throat. diagnosed tonsillitis. started azithromycin."
+    },
+    {
+        "id": "N020",
+        "original_text": "44 year old female with cough and fever. Diagnosed pneumonia. Given amoxicillin.",
+        "normalized_text": "44 year old female with cough and fever. diagnosed pneumonia. given amoxicillin."
+    },
+    {
+        "id": "N021",
+        "original_text": "58 year old male with chest pain. ECG suggests myocardial infarction. Started aspirin and atorvastatin.",
+        "normalized_text": "58 year old male with chest pain. ecg suggests myocardial infarction. started aspirin and atorvastatin."
+    },
+    {
+        "id": "N022",
+        "original_text": "27 year old female with dysuria. Diagnosed urinary tract infection. Prescribed ciprofloxacin.",
+        "normalized_text": "27 year old female with dysuria. diagnosed urinary tract infection. prescribed ciprofloxacin."
+    },
+    {
+        "id": "N023",
+        "original_text": "6 year old female with diarrhea and vomiting. Diagnosed gastroenteritis. Started ORS.",
+        "normalized_text": "6 year old female with diarrhea and vomiting. diagnosed gastroenteritis. started ors."
+    },
+    {
+        "id": "N024",
+        "original_text": "49 year old male with weight loss and night sweats. Diagnosed tuberculosis. Started rifampicin and isoniazid.",
+        "normalized_text": "49 year old male with weight loss and night sweats. diagnosed tuberculosis. started rifampicin and isoniazid."
+    },
+    {
+        "id": "N025",
+        "original_text": "36 year old female with headache and blurred vision. Diagnosed migraine. Given paracetamol.",
+        "normalized_text": "36 year old female with headache and blurred vision. diagnosed migraine. given paracetamol."
+    },
+    {
+        "id": "N026",
+        "original_text": "71 year old male with wheezing. Asthma exacerbation. Given salbutamol.",
+        "normalized_text": "71 year old male with wheezing. asthma exacerbation. given salbutamol."
+    },
+    {
+        "id": "N027",
+        "original_text": "29 year old male with fever and neck stiffness. Diagnosed meningitis. Started ceftriaxone.",
+        "normalized_text": "29 year old male with fever and neck stiffness. diagnosed meningitis. started ceftriaxone."
+    },
+    {
+        "id": "N028",
+        "original_text": "54 year old female with polyuria and fatigue. Diagnosed diabetes mellitus. Started metformin.",
+        "normalized_text": "54 year old female with polyuria and fatigue. diagnosed diabetes mellitus. started metformin."
+    },
+    {
+        "id": "N029",
+        "original_text": "41 year old male with sore throat and fever. Diagnosed tonsillitis. Started azithromycin.",
+        "normalized_text": "41 year old male with sore throat and fever. diagnosed tonsillitis. started azithromycin."
+    },
+    {
+        "id": "N030",
+        "original_text": "34 year old female with cough and chest pain. Diagnosed pneumonia. Started amoxicillin.",
+        "normalized_text": "34 year old female with cough and chest pain. diagnosed pneumonia. started amoxicillin."
+    },
+    {
+        "id": "N031",
+        "original_text": "59 year old male with chest discomfort radiating to arm. Diagnosed myocardial infarction. Given aspirin.",
+        "normalized_text": "59 year old male with chest discomfort radiating to arm. diagnosed myocardial infarction. given aspirin."
+    },
+    {
+        "id": "N032",
+        "original_text": "23 year old female with dysuria and frequency. Diagnosed urinary tract infection. Given nitrofurantoin.",
+        "normalized_text": "23 year old female with dysuria and frequency. diagnosed urinary tract infection. given nitrofurantoin."
+    },
+    {
+        "id": "N033",
+        "original_text": "47 year old male with chronic cough and weight loss. Diagnosed tuberculosis. Started rifampicin, isoniazid.",
+        "normalized_text": "47 year old male with chronic cough and weight loss. diagnosed tuberculosis. started rifampicin, isoniazid."
+    },
+    {
+        "id": "N034",
+        "original_text": "11 year old male with diarrhea and vomiting. Diagnosed gastroenteritis. Given ORS.",
+        "normalized_text": "11 year old male with diarrhea and vomiting. diagnosed gastroenteritis. given ors."
+    },
+    {
+        "id": "N035",
+        "original_text": "68 year old female with shortness of breath and wheezing. Asthma exacerbation. Given salbutamol.",
+        "normalized_text": "68 year old female with shortness of breath and wheezing. asthma exacerbation. given salbutamol."
+    },
+    {
+        "id": "N036",
+        "original_text": "32 year old male with headache and fever. Suspected meningitis. Started ceftriaxone.",
+        "normalized_text": "32 year old male with headache and fever. suspected meningitis. started ceftriaxone."
+    },
+    {
+        "id": "N037",
+        "original_text": "46 year old female with fever and cough. Diagnosed pneumonia. Given azithromycin.",
+        "normalized_text": "46 year old female with fever and cough. diagnosed pneumonia. given azithromycin."
+    },
+    {
+        "id": "N038",
+        "original_text": "57 year old male with high blood sugar. Diagnosed diabetes mellitus. Started metformin.",
+        "normalized_text": "57 year old male with high blood sugar. diagnosed diabetes mellitus. started metformin."
+    },
+    {
+        "id": "N039",
+        "original_text": "26 year old female with sore throat. Diagnosed tonsillitis. Given azithromycin.",
+        "normalized_text": "26 year old female with sore throat. diagnosed tonsillitis. given azithromycin."
+    },
+    {
+        "id": "N040",
+        "original_text": "39 year old male with severe headache. Diagnosed migraine. Given paracetamol.",
+        "normalized_text": "39 year old male with severe headache. diagnosed migraine. given paracetamol."
+    },
+    {
+        "id": "N041",
+        "original_text": "61 year old female with chest pain. Diagnosed myocardial infarction. Started aspirin and atorvastatin.",
+        "normalized_text": "61 year old female with chest pain. diagnosed myocardial infarction. started aspirin and atorvastatin."
+    },
+    {
+        "id": "N042",
+        "original_text": "21 year old male with dysuria. Diagnosed urinary tract infection. Given ciprofloxacin.",
+        "normalized_text": "21 year old male with dysuria. diagnosed urinary tract infection. given ciprofloxacin."
+    },
+    {
+        "id": "N043",
+        "original_text": "8 year old female with vomiting and diarrhea. Diagnosed gastroenteritis. Started ORS.",
+        "normalized_text": "8 year old female with vomiting and diarrhea. diagnosed gastroenteritis. started ors."
+    },
+    {
+        "id": "N044",
+        "original_text": "53 year old male with cough, fever. Diagnosed pneumonia. Given amoxicillin.",
+        "normalized_text": "53 year old male with cough, fever. diagnosed pneumonia. given amoxicillin."
+    },
+    {
+        "id": "N045",
+        "original_text": "35 year old female with headache and blurred vision. Diagnosed migraine. Given paracetamol.",
+        "normalized_text": "35 year old female with headache and blurred vision. diagnosed migraine. given paracetamol."
+    },
+    {
+        "id": "N046",
+        "original_text": "72 year old male with wheezing and breathlessness. Asthma exacerbation. Given salbutamol.",
+        "normalized_text": "72 year old male with wheezing and breathlessness. asthma exacerbation. given salbutamol."
+    },
+    {
+        "id": "N047",
+        "original_text": "24 year old female with fever and neck stiffness. Diagnosed meningitis. Started ceftriaxone.",
+        "normalized_text": "24 year old female with fever and neck stiffness. diagnosed meningitis. started ceftriaxone."
+    },
+    {
+        "id": "N048",
+        "original_text": "56 year old male with polyuria. Diagnosed diabetes mellitus. Started metformin.",
+        "normalized_text": "56 year old male with polyuria. diagnosed diabetes mellitus. started metformin."
+    },
+    {
+        "id": "N049",
+        "original_text": "31 year old male with sore throat and fever. Diagnosed tonsillitis. Given azithromycin.",
+        "normalized_text": "31 year old male with sore throat and fever. diagnosed tonsillitis. given azithromycin."
+    },
+    {
+        "id": "N050",
+        "original_text": "42 year old female with cough and fever. Diagnosed pneumonia. Started amoxicillin.",
+        "normalized_text": "42 year old female with cough and fever. diagnosed pneumonia. started amoxicillin."
+    }
+]
