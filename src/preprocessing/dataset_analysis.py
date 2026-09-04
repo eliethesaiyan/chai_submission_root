@@ -67,7 +67,9 @@ def extract_age_from_text(text: str) -> int:
     """
     # Use regex to find age patterns (e.g., "45 years old as in clincal notes")
     match_patterns = re.search(r"\b(\d+)\s+year old\b", text.lower())
-    return int(match_patterns.group(1)) if match_patterns else None
+    age = int(match_patterns.group(1)) if match_patterns else None
+    start, end  = match_patterns.span(1) if match_patterns else (0, 0)
+    return age, start, end 
 
 def extract_sex_from_text(text: str) -> str:
     """
@@ -81,7 +83,10 @@ def extract_sex_from_text(text: str) -> str:
     """
     # Use regex to find sex patterns (e.g., "male" or "female")
     match_patterns = re.search(r"\b year old\s+(male|female)\b", text.lower())
-    return match_patterns.group(1) if match_patterns else None
+    sex = match_patterns.group(1) if match_patterns else None
+    start, end  = match_patterns.span(1) if match_patterns else (0,0)
+
+    return sex, start, end 
 
 if __name__ == "__main__":
     # Example usage
@@ -104,12 +109,12 @@ if __name__ == "__main__":
 
     # Extract age information from clinical notes
     ages = [extract_age_from_text(note.get("normalized_text", "")) for note in clinical_notes]
-    ages = [age for age in ages if age is not None]
+    ages = [age[0] for age in ages if age is not None]
     print("Extracted Ages from Clinical Notes:", ages)
 
     # Extract sex information from clinical notes
     sexes = [extract_sex_from_text(note.get("normalized_text", "")) for note in clinical_notes]
-    sexes = [sex for sex in sexes if sex is not None]
+    sexes = [sex[0] for sex in sexes if sex is not None]
     male_count = sexes.count("male")
     female_count = sexes.count("female")
     print("Extracted Sexes from Clinical Notes:", sexes)
