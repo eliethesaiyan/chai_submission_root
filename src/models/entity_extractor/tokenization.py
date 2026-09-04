@@ -6,7 +6,7 @@ from src.preprocessing.preprocess import load_json_file
 
 
 MAX_LENGTH = 128
-
+MODEL_NAME = "distilbert-base-uncased"
 LABELS = [
     "O",
     "B-age",
@@ -29,7 +29,7 @@ ID2LABEL = {
     idx:label for idx, label in enumerate(LABELS)
 }
 
-tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased", use_fast=True)
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_fast=True)
 
 def load_annnotations(annotation_path: str|Path)-> list:
     data = load_json_file(annotation_path)
