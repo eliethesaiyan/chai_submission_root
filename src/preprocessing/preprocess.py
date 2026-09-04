@@ -6,7 +6,9 @@ import os
 import json
 import re
 import random 
+import torch
 from pathlib import Path
+
 from typing import List, Dict, Any
 
 import numpy as np
@@ -19,6 +21,11 @@ def set_seed(seed: int):
     """
     random.seed(seed)
     np.random.seed(seed)
+    torch.manual_seed(seed)
+
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+
 
 def load_json_file(file_path: Path| str) -> List[Dict[str, Any]]:
     """
