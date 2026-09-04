@@ -1,0 +1,2078 @@
+[
+  {
+    "note_id": "N001",
+    "text": "45 year old male with fever and productive cough for five days. Diagnosed with pneumonia. Started on amoxicillin.",
+    "entities": [
+      {
+        "text": "45",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "fever",
+        "start": 22,
+        "end": 27,
+        "label": "symptoms"
+      },
+      {
+        "text": "productive cough",
+        "start": 32,
+        "end": 48,
+        "label": "symptoms"
+      },
+      {
+        "text": "pneumonia",
+        "start": 79,
+        "end": 88,
+        "label": "diagnosis"
+      },
+      {
+        "text": "amoxicillin",
+        "start": 101,
+        "end": 112,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N002",
+    "text": "30 year old female presenting with headache, neck stiffness and fever. Impression meningitis. Given ceftriaxone.",
+    "entities": [
+      {
+        "text": "30",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "headache",
+        "start": 35,
+        "end": 43,
+        "label": "symptoms"
+      },
+      {
+        "text": "neck stiffness",
+        "start": 45,
+        "end": 59,
+        "label": "symptoms"
+      },
+      {
+        "text": "fever",
+        "start": 64,
+        "end": 69,
+        "label": "symptoms"
+      },
+      {
+        "text": "meningitis",
+        "start": 82,
+        "end": 92,
+        "label": "diagnosis"
+      },
+      {
+        "text": "ceftriaxone",
+        "start": 100,
+        "end": 111,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N003",
+    "text": "60 year old male with chest pain radiating to left arm. Diagnosed myocardial infarction. Started aspirin and atorvastatin.",
+    "entities": [
+      {
+        "text": "60",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "chest pain radiating to left arm",
+        "start": 22,
+        "end": 54,
+        "label": "symptoms"
+      },
+      {
+        "text": "myocardial infarction",
+        "start": 66,
+        "end": 87,
+        "label": "diagnosis"
+      },
+      {
+        "text": "aspirin",
+        "start": 97,
+        "end": 104,
+        "label": "medications"
+      },
+      {
+        "text": "atorvastatin",
+        "start": 109,
+        "end": 121,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N004",
+    "text": "25 year old female with dysuria and lower abdominal pain. Diagnosed urinary tract infection. Prescribed ciprofloxacin.",
+    "entities": [
+      {
+        "text": "25",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "dysuria",
+        "start": 24,
+        "end": 31,
+        "label": "symptoms"
+      },
+      {
+        "text": "lower abdominal pain",
+        "start": 36,
+        "end": 56,
+        "label": "symptoms"
+      },
+      {
+        "text": "urinary tract infection",
+        "start": 68,
+        "end": 91,
+        "label": "diagnosis"
+      },
+      {
+        "text": "ciprofloxacin",
+        "start": 104,
+        "end": 117,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N005",
+    "text": "50 year old male with cough, weight loss and night sweats. Suspected tuberculosis. Started rifampicin and isoniazid.",
+    "entities": [
+      {
+        "text": "50",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "cough",
+        "start": 22,
+        "end": 27,
+        "label": "symptoms"
+      },
+      {
+        "text": "weight loss",
+        "start": 29,
+        "end": 40,
+        "label": "symptoms"
+      },
+      {
+        "text": "night sweats",
+        "start": 45,
+        "end": 57,
+        "label": "symptoms"
+      },
+      {
+        "text": "tuberculosis",
+        "start": 69,
+        "end": 81,
+        "label": "diagnosis"
+      },
+      {
+        "text": "rifampicin",
+        "start": 91,
+        "end": 101,
+        "label": "medications"
+      },
+      {
+        "text": "isoniazid",
+        "start": 106,
+        "end": 115,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N006",
+    "text": "70 year old female with shortness of breath and wheezing. Diagnosed asthma exacerbation. Given salbutamol nebulization.",
+    "entities": [
+      {
+        "text": "70",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "shortness of breath",
+        "start": 24,
+        "end": 43,
+        "label": "symptoms"
+      },
+      {
+        "text": "wheezing",
+        "start": 48,
+        "end": 56,
+        "label": "symptoms"
+      },
+      {
+        "text": "asthma exacerbation",
+        "start": 68,
+        "end": 87,
+        "label": "diagnosis"
+      },
+      {
+        "text": "salbutamol",
+        "start": 95,
+        "end": 105,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N007",
+    "text": "5 year old male with fever, vomiting and diarrhea. Diagnosed gastroenteritis. Started ORS.",
+    "entities": [
+      {
+        "text": "5",
+        "start": 0,
+        "end": 1,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 11,
+        "end": 15,
+        "label": "sex"
+      },
+      {
+        "text": "fever",
+        "start": 21,
+        "end": 26,
+        "label": "symptoms"
+      },
+      {
+        "text": "vomiting",
+        "start": 28,
+        "end": 36,
+        "label": "symptoms"
+      },
+      {
+        "text": "diarrhea",
+        "start": 41,
+        "end": 49,
+        "label": "symptoms"
+      },
+      {
+        "text": "gastroenteritis",
+        "start": 61,
+        "end": 76,
+        "label": "diagnosis"
+      },
+      {
+        "text": "ORS",
+        "start": 86,
+        "end": 89,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N008",
+    "text": "35 year old female with sore throat and fever. Diagnosed tonsillitis. Started azithromycin.",
+    "entities": [
+      {
+        "text": "35",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "sore throat",
+        "start": 24,
+        "end": 35,
+        "label": "symptoms"
+      },
+      {
+        "text": "fever",
+        "start": 40,
+        "end": 45,
+        "label": "symptoms"
+      },
+      {
+        "text": "tonsillitis",
+        "start": 57,
+        "end": 68,
+        "label": "diagnosis"
+      },
+      {
+        "text": "azithromycin",
+        "start": 78,
+        "end": 90,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N009",
+    "text": "55 year old male with polyuria and polydipsia. Diagnosed diabetes mellitus. Started metformin.",
+    "entities": [
+      {
+        "text": "55",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "polyuria",
+        "start": 22,
+        "end": 30,
+        "label": "symptoms"
+      },
+      {
+        "text": "polydipsia",
+        "start": 35,
+        "end": 45,
+        "label": "symptoms"
+      },
+      {
+        "text": "diabetes mellitus",
+        "start": 57,
+        "end": 74,
+        "label": "diagnosis"
+      },
+      {
+        "text": "metformin",
+        "start": 84,
+        "end": 93,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N010",
+    "text": "40 year old female with severe headache and blurred vision. Diagnosed migraine. Given paracetamol.",
+    "entities": [
+      {
+        "text": "40",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "severe headache",
+        "start": 24,
+        "end": 39,
+        "label": "symptoms"
+      },
+      {
+        "text": "blurred vision",
+        "start": 44,
+        "end": 58,
+        "label": "symptoms"
+      },
+      {
+        "text": "migraine",
+        "start": 70,
+        "end": 78,
+        "label": "diagnosis"
+      },
+      {
+        "text": "paracetamol",
+        "start": 86,
+        "end": 97,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N011",
+    "text": "28 year old male with fever and cough. Chest exam suggest pneumonia. Started azithromycin.",
+    "entities": [
+      {
+        "text": "28",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "fever",
+        "start": 22,
+        "end": 27,
+        "label": "symptoms"
+      },
+      {
+        "text": "cough",
+        "start": 32,
+        "end": 37,
+        "label": "symptoms"
+      },
+      {
+        "text": "pneumonia",
+        "start": 58,
+        "end": 67,
+        "label": "diagnosis"
+      },
+      {
+        "text": "azithromycin",
+        "start": 77,
+        "end": 89,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N012",
+    "text": "62 year old female with chest tightness and shortness of breath. Diagnosed myocardial infarction. Given aspirin.",
+    "entities": [
+      {
+        "text": "62",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "chest tightness",
+        "start": 24,
+        "end": 39,
+        "label": "symptoms"
+      },
+      {
+        "text": "shortness of breath",
+        "start": 44,
+        "end": 63,
+        "label": "symptoms"
+      },
+      {
+        "text": "myocardial infarction",
+        "start": 75,
+        "end": 96,
+        "label": "diagnosis"
+      },
+      {
+        "text": "aspirin",
+        "start": 104,
+        "end": 111,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N013",
+    "text": "22 year old female with burning urination. Diagnosed urinary tract infection. Given nitrofurantoin.",
+    "entities": [
+      {
+        "text": "22",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "burning urination",
+        "start": 24,
+        "end": 41,
+        "label": "symptoms"
+      },
+      {
+        "text": "urinary tract infection",
+        "start": 53,
+        "end": 76,
+        "label": "diagnosis"
+      },
+      {
+        "text": "nitrofurantoin",
+        "start": 84,
+        "end": 98,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N014",
+    "text": "48 year old male with night sweats and chronic cough. Diagnosed tuberculosis. Started rifampicin, isoniazid.",
+    "entities": [
+      {
+        "text": "48",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "night sweats",
+        "start": 22,
+        "end": 34,
+        "label": "symptoms"
+      },
+      {
+        "text": "chronic cough",
+        "start": 39,
+        "end": 52,
+        "label": "symptoms"
+      },
+      {
+        "text": "tuberculosis",
+        "start": 64,
+        "end": 76,
+        "label": "diagnosis"
+      },
+      {
+        "text": "rifampicin",
+        "start": 86,
+        "end": 96,
+        "label": "medications"
+      },
+      {
+        "text": "isoniazid",
+        "start": 98,
+        "end": 107,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N015",
+    "text": "10 year old male with vomiting and diarrhea. Diagnosed gastroenteritis. Given ORS.",
+    "entities": [
+      {
+        "text": "10",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "vomiting",
+        "start": 22,
+        "end": 30,
+        "label": "symptoms"
+      },
+      {
+        "text": "diarrhea",
+        "start": 35,
+        "end": 43,
+        "label": "symptoms"
+      },
+      {
+        "text": "gastroenteritis",
+        "start": 55,
+        "end": 70,
+        "label": "diagnosis"
+      },
+      {
+        "text": "ORS",
+        "start": 78,
+        "end": 81,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N016",
+    "text": "33 year old female with wheezing and shortness of breath. Asthma exacerbation. Given salbutamol.",
+    "entities": [
+      {
+        "text": "33",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "wheezing",
+        "start": 24,
+        "end": 32,
+        "label": "symptoms"
+      },
+      {
+        "text": "shortness of breath",
+        "start": 37,
+        "end": 56,
+        "label": "symptoms"
+      },
+      {
+        "text": "Asthma exacerbation",
+        "start": 58,
+        "end": 77,
+        "label": "diagnosis"
+      },
+      {
+        "text": "salbutamol",
+        "start": 85,
+        "end": 95,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N017",
+    "text": "65 year old male with fever and headache. Suspected meningitis. Started ceftriaxone.",
+    "entities": [
+      {
+        "text": "65",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "fever",
+        "start": 22,
+        "end": 27,
+        "label": "symptoms"
+      },
+      {
+        "text": "headache",
+        "start": 32,
+        "end": 40,
+        "label": "symptoms"
+      },
+      {
+        "text": "meningitis",
+        "start": 52,
+        "end": 62,
+        "label": "diagnosis"
+      },
+      {
+        "text": "ceftriaxone",
+        "start": 72,
+        "end": 83,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N018",
+    "text": "52 year old female with high blood sugar. Diagnosed diabetes mellitus. Started metformin.",
+    "entities": [
+      {
+        "text": "52",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "high blood sugar",
+        "start": 24,
+        "end": 40,
+        "label": "symptoms"
+      },
+      {
+        "text": "diabetes mellitus",
+        "start": 52,
+        "end": 69,
+        "label": "diagnosis"
+      },
+      {
+        "text": "metformin",
+        "start": 79,
+        "end": 88,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N019",
+    "text": "38 year old male with sore throat. Diagnosed tonsillitis. Started azithromycin.",
+    "entities": [
+      {
+        "text": "38",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "sore throat",
+        "start": 22,
+        "end": 33,
+        "label": "symptoms"
+      },
+      {
+        "text": "tonsillitis",
+        "start": 45,
+        "end": 56,
+        "label": "diagnosis"
+      },
+      {
+        "text": "azithromycin",
+        "start": 66,
+        "end": 78,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N020",
+    "text": "44 year old female with cough and fever. Diagnosed pneumonia. Given amoxicillin.",
+    "entities": [
+      {
+        "text": "44",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "cough",
+        "start": 24,
+        "end": 29,
+        "label": "symptoms"
+      },
+      {
+        "text": "fever",
+        "start": 34,
+        "end": 39,
+        "label": "symptoms"
+      },
+      {
+        "text": "pneumonia",
+        "start": 51,
+        "end": 60,
+        "label": "diagnosis"
+      },
+      {
+        "text": "amoxicillin",
+        "start": 68,
+        "end": 79,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N021",
+    "text": "58 year old male with chest pain. ECG suggests myocardial infarction. Started aspirin and atorvastatin.",
+    "entities": [
+      {
+        "text": "58",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "chest pain",
+        "start": 22,
+        "end": 32,
+        "label": "symptoms"
+      },
+      {
+        "text": "myocardial infarction",
+        "start": 47,
+        "end": 68,
+        "label": "diagnosis"
+      },
+      {
+        "text": "aspirin",
+        "start": 78,
+        "end": 85,
+        "label": "medications"
+      },
+      {
+        "text": "atorvastatin",
+        "start": 90,
+        "end": 102,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N022",
+    "text": "27 year old female with dysuria. Diagnosed urinary tract infection. Prescribed ciprofloxacin.",
+    "entities": [
+      {
+        "text": "27",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "dysuria",
+        "start": 24,
+        "end": 31,
+        "label": "symptoms"
+      },
+      {
+        "text": "urinary tract infection",
+        "start": 43,
+        "end": 66,
+        "label": "diagnosis"
+      },
+      {
+        "text": "ciprofloxacin",
+        "start": 79,
+        "end": 92,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N023",
+    "text": "6 year old female with diarrhea and vomiting. Diagnosed gastroenteritis. Started ORS.",
+    "entities": [
+      {
+        "text": "6",
+        "start": 0,
+        "end": 1,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 11,
+        "end": 17,
+        "label": "sex"
+      },
+      {
+        "text": "diarrhea",
+        "start": 23,
+        "end": 31,
+        "label": "symptoms"
+      },
+      {
+        "text": "vomiting",
+        "start": 36,
+        "end": 44,
+        "label": "symptoms"
+      },
+      {
+        "text": "gastroenteritis",
+        "start": 56,
+        "end": 71,
+        "label": "diagnosis"
+      },
+      {
+        "text": "ORS",
+        "start": 81,
+        "end": 84,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N024",
+    "text": "49 year old male with weight loss and night sweats. Diagnosed tuberculosis. Started rifampicin and isoniazid.",
+    "entities": [
+      {
+        "text": "49",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "weight loss",
+        "start": 22,
+        "end": 33,
+        "label": "symptoms"
+      },
+      {
+        "text": "night sweats",
+        "start": 38,
+        "end": 50,
+        "label": "symptoms"
+      },
+      {
+        "text": "tuberculosis",
+        "start": 62,
+        "end": 74,
+        "label": "diagnosis"
+      },
+      {
+        "text": "rifampicin",
+        "start": 84,
+        "end": 94,
+        "label": "medications"
+      },
+      {
+        "text": "isoniazid",
+        "start": 99,
+        "end": 108,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N025",
+    "text": "36 year old female with headache and blurred vision. Diagnosed migraine. Given paracetamol.",
+    "entities": [
+      {
+        "text": "36",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "headache",
+        "start": 24,
+        "end": 32,
+        "label": "symptoms"
+      },
+      {
+        "text": "blurred vision",
+        "start": 37,
+        "end": 51,
+        "label": "symptoms"
+      },
+      {
+        "text": "migraine",
+        "start": 63,
+        "end": 71,
+        "label": "diagnosis"
+      },
+      {
+        "text": "paracetamol",
+        "start": 79,
+        "end": 90,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N026",
+    "text": "71 year old male with wheezing. Asthma exacerbation. Given salbutamol.",
+    "entities": [
+      {
+        "text": "71",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "wheezing",
+        "start": 22,
+        "end": 30,
+        "label": "symptoms"
+      },
+      {
+        "text": "Asthma exacerbation",
+        "start": 32,
+        "end": 51,
+        "label": "diagnosis"
+      },
+      {
+        "text": "salbutamol",
+        "start": 59,
+        "end": 69,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N027",
+    "text": "29 year old male with fever and neck stiffness. Diagnosed meningitis. Started ceftriaxone.",
+    "entities": [
+      {
+        "text": "29",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "fever",
+        "start": 22,
+        "end": 27,
+        "label": "symptoms"
+      },
+      {
+        "text": "neck stiffness",
+        "start": 32,
+        "end": 46,
+        "label": "symptoms"
+      },
+      {
+        "text": "meningitis",
+        "start": 58,
+        "end": 68,
+        "label": "diagnosis"
+      },
+      {
+        "text": "ceftriaxone",
+        "start": 78,
+        "end": 89,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N028",
+    "text": "54 year old female with polyuria and fatigue. Diagnosed diabetes mellitus. Started metformin.",
+    "entities": [
+      {
+        "text": "54",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "polyuria",
+        "start": 24,
+        "end": 32,
+        "label": "symptoms"
+      },
+      {
+        "text": "fatigue",
+        "start": 37,
+        "end": 44,
+        "label": "symptoms"
+      },
+      {
+        "text": "diabetes mellitus",
+        "start": 56,
+        "end": 73,
+        "label": "diagnosis"
+      },
+      {
+        "text": "metformin",
+        "start": 83,
+        "end": 92,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N029",
+    "text": "41 year old male with sore throat and fever. Diagnosed tonsillitis. Started azithromycin.",
+    "entities": [
+      {
+        "text": "41",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "sore throat",
+        "start": 22,
+        "end": 33,
+        "label": "symptoms"
+      },
+      {
+        "text": "fever",
+        "start": 38,
+        "end": 43,
+        "label": "symptoms"
+      },
+      {
+        "text": "tonsillitis",
+        "start": 55,
+        "end": 66,
+        "label": "diagnosis"
+      },
+      {
+        "text": "azithromycin",
+        "start": 76,
+        "end": 88,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N030",
+    "text": "34 year old female with cough and chest pain. Diagnosed pneumonia. Started amoxicillin.",
+    "entities": [
+      {
+        "text": "34",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "cough",
+        "start": 24,
+        "end": 29,
+        "label": "symptoms"
+      },
+      {
+        "text": "chest pain",
+        "start": 34,
+        "end": 44,
+        "label": "symptoms"
+      },
+      {
+        "text": "pneumonia",
+        "start": 56,
+        "end": 65,
+        "label": "diagnosis"
+      },
+      {
+        "text": "amoxicillin",
+        "start": 75,
+        "end": 86,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N031",
+    "text": "59 year old male with chest discomfort radiating to arm. Diagnosed myocardial infarction. Given aspirin.",
+    "entities": [
+      {
+        "text": "59",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "chest discomfort radiating to arm",
+        "start": 22,
+        "end": 55,
+        "label": "symptoms"
+      },
+      {
+        "text": "myocardial infarction",
+        "start": 67,
+        "end": 88,
+        "label": "diagnosis"
+      },
+      {
+        "text": "aspirin",
+        "start": 96,
+        "end": 103,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N032",
+    "text": "23 year old female with dysuria and frequency. Diagnosed urinary tract infection. Given nitrofurantoin.",
+    "entities": [
+      {
+        "text": "23",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "dysuria",
+        "start": 24,
+        "end": 31,
+        "label": "symptoms"
+      },
+      {
+        "text": "frequency",
+        "start": 36,
+        "end": 45,
+        "label": "symptoms"
+      },
+      {
+        "text": "urinary tract infection",
+        "start": 57,
+        "end": 80,
+        "label": "diagnosis"
+      },
+      {
+        "text": "nitrofurantoin",
+        "start": 88,
+        "end": 102,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N033",
+    "text": "47 year old male with chronic cough and weight loss. Diagnosed tuberculosis. Started rifampicin, isoniazid.",
+    "entities": [
+      {
+        "text": "47",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "chronic cough",
+        "start": 22,
+        "end": 35,
+        "label": "symptoms"
+      },
+      {
+        "text": "weight loss",
+        "start": 40,
+        "end": 51,
+        "label": "symptoms"
+      },
+      {
+        "text": "tuberculosis",
+        "start": 63,
+        "end": 75,
+        "label": "diagnosis"
+      },
+      {
+        "text": "rifampicin",
+        "start": 85,
+        "end": 95,
+        "label": "medications"
+      },
+      {
+        "text": "isoniazid",
+        "start": 97,
+        "end": 106,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N034",
+    "text": "11 year old male with diarrhea and vomiting. Diagnosed gastroenteritis. Given ORS.",
+    "entities": [
+      {
+        "text": "11",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "diarrhea",
+        "start": 22,
+        "end": 30,
+        "label": "symptoms"
+      },
+      {
+        "text": "vomiting",
+        "start": 35,
+        "end": 43,
+        "label": "symptoms"
+      },
+      {
+        "text": "gastroenteritis",
+        "start": 55,
+        "end": 70,
+        "label": "diagnosis"
+      },
+      {
+        "text": "ORS",
+        "start": 78,
+        "end": 81,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N035",
+    "text": "68 year old female with shortness of breath and wheezing. Asthma exacerbation. Given salbutamol.",
+    "entities": [
+      {
+        "text": "68",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "shortness of breath",
+        "start": 24,
+        "end": 43,
+        "label": "symptoms"
+      },
+      {
+        "text": "wheezing",
+        "start": 48,
+        "end": 56,
+        "label": "symptoms"
+      },
+      {
+        "text": "Asthma exacerbation",
+        "start": 58,
+        "end": 77,
+        "label": "diagnosis"
+      },
+      {
+        "text": "salbutamol",
+        "start": 85,
+        "end": 95,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N036",
+    "text": "32 year old male with headache and fever. Suspected meningitis. Started ceftriaxone.",
+    "entities": [
+      {
+        "text": "32",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "headache",
+        "start": 22,
+        "end": 30,
+        "label": "symptoms"
+      },
+      {
+        "text": "fever",
+        "start": 35,
+        "end": 40,
+        "label": "symptoms"
+      },
+      {
+        "text": "meningitis",
+        "start": 52,
+        "end": 62,
+        "label": "diagnosis"
+      },
+      {
+        "text": "ceftriaxone",
+        "start": 72,
+        "end": 83,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N037",
+    "text": "46 year old female with fever and cough. Diagnosed pneumonia. Given azithromycin.",
+    "entities": [
+      {
+        "text": "46",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "fever",
+        "start": 24,
+        "end": 29,
+        "label": "symptoms"
+      },
+      {
+        "text": "cough",
+        "start": 34,
+        "end": 39,
+        "label": "symptoms"
+      },
+      {
+        "text": "pneumonia",
+        "start": 51,
+        "end": 60,
+        "label": "diagnosis"
+      },
+      {
+        "text": "azithromycin",
+        "start": 68,
+        "end": 80,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N038",
+    "text": "57 year old male with high blood sugar. Diagnosed diabetes mellitus. Started metformin.",
+    "entities": [
+      {
+        "text": "57",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "high blood sugar",
+        "start": 22,
+        "end": 38,
+        "label": "symptoms"
+      },
+      {
+        "text": "diabetes mellitus",
+        "start": 50,
+        "end": 67,
+        "label": "diagnosis"
+      },
+      {
+        "text": "metformin",
+        "start": 77,
+        "end": 86,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N039",
+    "text": "26 year old female with sore throat. Diagnosed tonsillitis. Given azithromycin.",
+    "entities": [
+      {
+        "text": "26",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "sore throat",
+        "start": 24,
+        "end": 35,
+        "label": "symptoms"
+      },
+      {
+        "text": "tonsillitis",
+        "start": 47,
+        "end": 58,
+        "label": "diagnosis"
+      },
+      {
+        "text": "azithromycin",
+        "start": 66,
+        "end": 78,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N040",
+    "text": "39 year old male with severe headache. Diagnosed migraine. Given paracetamol.",
+    "entities": [
+      {
+        "text": "39",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "severe headache",
+        "start": 22,
+        "end": 37,
+        "label": "symptoms"
+      },
+      {
+        "text": "migraine",
+        "start": 49,
+        "end": 57,
+        "label": "diagnosis"
+      },
+      {
+        "text": "paracetamol",
+        "start": 65,
+        "end": 76,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N041",
+    "text": "61 year old female with chest pain. Diagnosed myocardial infarction. Started aspirin and atorvastatin.",
+    "entities": [
+      {
+        "text": "61",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "chest pain",
+        "start": 24,
+        "end": 34,
+        "label": "symptoms"
+      },
+      {
+        "text": "myocardial infarction",
+        "start": 46,
+        "end": 67,
+        "label": "diagnosis"
+      },
+      {
+        "text": "aspirin",
+        "start": 77,
+        "end": 84,
+        "label": "medications"
+      },
+      {
+        "text": "atorvastatin",
+        "start": 89,
+        "end": 101,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N042",
+    "text": "21 year old male with dysuria. Diagnosed urinary tract infection. Given ciprofloxacin.",
+    "entities": [
+      {
+        "text": "21",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "dysuria",
+        "start": 22,
+        "end": 29,
+        "label": "symptoms"
+      },
+      {
+        "text": "urinary tract infection",
+        "start": 41,
+        "end": 64,
+        "label": "diagnosis"
+      },
+      {
+        "text": "ciprofloxacin",
+        "start": 72,
+        "end": 85,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N043",
+    "text": "8 year old female with vomiting and diarrhea. Diagnosed gastroenteritis. Started ORS.",
+    "entities": [
+      {
+        "text": "8",
+        "start": 0,
+        "end": 1,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 11,
+        "end": 17,
+        "label": "sex"
+      },
+      {
+        "text": "vomiting",
+        "start": 23,
+        "end": 31,
+        "label": "symptoms"
+      },
+      {
+        "text": "diarrhea",
+        "start": 36,
+        "end": 44,
+        "label": "symptoms"
+      },
+      {
+        "text": "gastroenteritis",
+        "start": 56,
+        "end": 71,
+        "label": "diagnosis"
+      },
+      {
+        "text": "ORS",
+        "start": 81,
+        "end": 84,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N044",
+    "text": "53 year old male with cough, fever. Diagnosed pneumonia. Given amoxicillin.",
+    "entities": [
+      {
+        "text": "53",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "cough",
+        "start": 22,
+        "end": 27,
+        "label": "symptoms"
+      },
+      {
+        "text": "fever",
+        "start": 29,
+        "end": 34,
+        "label": "symptoms"
+      },
+      {
+        "text": "pneumonia",
+        "start": 46,
+        "end": 55,
+        "label": "diagnosis"
+      },
+      {
+        "text": "amoxicillin",
+        "start": 63,
+        "end": 74,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N045",
+    "text": "35 year old female with headache and blurred vision. Diagnosed migraine. Given paracetamol.",
+    "entities": [
+      {
+        "text": "35",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "headache",
+        "start": 24,
+        "end": 32,
+        "label": "symptoms"
+      },
+      {
+        "text": "blurred vision",
+        "start": 37,
+        "end": 51,
+        "label": "symptoms"
+      },
+      {
+        "text": "migraine",
+        "start": 63,
+        "end": 71,
+        "label": "diagnosis"
+      },
+      {
+        "text": "paracetamol",
+        "start": 79,
+        "end": 90,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N046",
+    "text": "72 year old male with wheezing and breathlessness. Asthma exacerbation. Given salbutamol.",
+    "entities": [
+      {
+        "text": "72",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "wheezing",
+        "start": 22,
+        "end": 30,
+        "label": "symptoms"
+      },
+      {
+        "text": "breathlessness",
+        "start": 35,
+        "end": 49,
+        "label": "symptoms"
+      },
+      {
+        "text": "Asthma exacerbation",
+        "start": 51,
+        "end": 70,
+        "label": "diagnosis"
+      },
+      {
+        "text": "salbutamol",
+        "start": 78,
+        "end": 88,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N047",
+    "text": "24 year old female with fever and neck stiffness. Diagnosed meningitis. Started ceftriaxone.",
+    "entities": [
+      {
+        "text": "24",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "fever",
+        "start": 24,
+        "end": 29,
+        "label": "symptoms"
+      },
+      {
+        "text": "neck stiffness",
+        "start": 34,
+        "end": 48,
+        "label": "symptoms"
+      },
+      {
+        "text": "meningitis",
+        "start": 60,
+        "end": 70,
+        "label": "diagnosis"
+      },
+      {
+        "text": "ceftriaxone",
+        "start": 80,
+        "end": 91,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N048",
+    "text": "56 year old male with polyuria. Diagnosed diabetes mellitus. Started metformin.",
+    "entities": [
+      {
+        "text": "56",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "polyuria",
+        "start": 22,
+        "end": 30,
+        "label": "symptoms"
+      },
+      {
+        "text": "diabetes mellitus",
+        "start": 42,
+        "end": 59,
+        "label": "diagnosis"
+      },
+      {
+        "text": "metformin",
+        "start": 69,
+        "end": 78,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N049",
+    "text": "31 year old male with sore throat and fever. Diagnosed tonsillitis. Given azithromycin.",
+    "entities": [
+      {
+        "text": "31",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "male",
+        "start": 12,
+        "end": 16,
+        "label": "sex"
+      },
+      {
+        "text": "sore throat",
+        "start": 22,
+        "end": 33,
+        "label": "symptoms"
+      },
+      {
+        "text": "fever",
+        "start": 38,
+        "end": 43,
+        "label": "symptoms"
+      },
+      {
+        "text": "tonsillitis",
+        "start": 55,
+        "end": 66,
+        "label": "diagnosis"
+      },
+      {
+        "text": "azithromycin",
+        "start": 74,
+        "end": 86,
+        "label": "medications"
+      }
+    ]
+  },
+  {
+    "note_id": "N050",
+    "text": "42 year old female with cough and fever. Diagnosed pneumonia. Started amoxicillin.",
+    "entities": [
+      {
+        "text": "42",
+        "start": 0,
+        "end": 2,
+        "label": "age"
+      },
+      {
+        "text": "female",
+        "start": 12,
+        "end": 18,
+        "label": "sex"
+      },
+      {
+        "text": "cough",
+        "start": 24,
+        "end": 29,
+        "label": "symptoms"
+      },
+      {
+        "text": "fever",
+        "start": 34,
+        "end": 39,
+        "label": "symptoms"
+      },
+      {
+        "text": "pneumonia",
+        "start": 51,
+        "end": 60,
+        "label": "diagnosis"
+      },
+      {
+        "text": "amoxicillin",
+        "start": 70,
+        "end": 81,
+        "label": "medications"
+      }
+    ]
+  }
+]
