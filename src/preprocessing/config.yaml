@@ -1,0 +1,10 @@
+# config yaml
+paths:
+ data_dir: ${root:}/src/data
+
+annotator:
+  _target_: src.preprocessing.annotator.Annotator
+  data_dir: ${paths.data_dir}
+  clinical_notes_path: ${paths.data_dir}/clinical_notes.json
+  guidelines_path: ${paths.data_dir}/guidelines.json
+  output_path: ${paths.data_dir}/annotations.json
