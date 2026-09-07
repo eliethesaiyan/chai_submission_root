@@ -1,7 +1,3 @@
-#folders
-models/checkpoints/*.pt
-models/checkpoints/*.pth
-models/checkpoints/*.safetensors
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -220,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ML training artifacts
+models/checkpoints/
+*.pt
+*.pth
+*.safetensors
