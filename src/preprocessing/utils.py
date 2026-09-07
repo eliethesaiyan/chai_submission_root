@@ -7,6 +7,8 @@ import json, re
 from pathlib import Path
 
 from typing import List, Dict, Any
+from collections import Counter
+
 import numpy as np
 
 import logging
@@ -127,9 +129,89 @@ def save_json_file(data: List[Dict[str, Any]], file_path: Path| str):
         try:
             json.dump(data, f, indent=2, ensure_ascii=False)
         except Exception as e:
-            print(f"Error saving JSON file {file_path}: {e}")
+            get_logger().info(f"Error saving JSON file {file_path}: {e}")
+
+def load_json_file(file_path: Path | str) -> List[Dict[str, Any]]:
+    """
+    Load clinical/guidelines JSON files.
+
+    Args:
+        file_path (str): Path to the JSON file 
+    """
+    if isinstance(file_path, str):
+        file_path = Path(file_path)
+
+    with file_path.open("r") as f:
+        data = json.load(f)
+
+    return data
+
+def word_frequencies_counter(text: str) -> Counter:
+    """
+    Compute word frequencies in a given text.
+
+    Args:
+        text (str): Input text.
+
+    Returns:
+        Counter: A Counter object with word frequencies.
+    """
+    # Normalize and tokenize the text
+    words = re.findall(r"\b\w+(?:[-']\w+)*\b", text.lower().strip())
+    return Counter(words)
+
+def sentence_count(texts: List[str]) -> int:
+    """
+    Compute the distribution of sentence lengths in a list of texts.
+
+    Args:
+        texts (List[str]): List of input texts.
+
+    Returns:
+        int: Total number of sentences in the input texts.
+    """
+    total_sentences = 0
+    for text in texts:
+        # Count sentences using a simple heuristic (split by '.', '!', '?')
+        sentences = re.split(r"[.!?]", text)
+        total_sentences += len(sentences)
+    return total_sentences
+
+def extract_age_from_text(text: str) -> int:
+    """
+    Extract age information from a given text.
+
+    Args:
+        text (str): Input text.
+
+    Returns:
+        List[int]: A list of extracted ages.
+    """
+    # Use regex to find age patterns (e.g., "45 years old as in clincal notes")
+    match_patterns = re.search(r"\b(\d+)\s+year old\b", text.lower())
+    age = int(match_patterns.group(1)) if match_patterns else None
+    start, end  = match_patterns.span(1) if match_patterns else (0, 0)
+    return age, start, end 
+
+def extract_sex_from_text(text: str) -> str:
+    """
+    Extract sex information from a given text.
+
+    Args:
+        text (str): Input text.
+
+    Returns:
+        str: Extracted sex concept or None if not found.
+    """
+    # Use regex to find sex patterns (e.g., "male" or "female")
+    match_patterns = re.search(r"\b year old\s+(male|female)\b", text.lower())
+    sex = match_patterns.group(1) if match_patterns else None
+    start, end  = match_patterns.span(1) if match_patterns else (0,0)
+
+    return sex, start, end 
 
 #test functions
+'''
 if __name__ == "__main__":
     # Example usage
     ROOT_DIR = Path(__file__).parent.parent.parent
@@ -149,3 +231,4 @@ if __name__ == "__main__":
 
     save_json_file(processed_clinical_notes, Path(DATA_DIR, "processed", "processed_clinical_notes.json"))
     save_json_file(processed_guidelines, Path(DATA_DIR, "processed", "processed_guidelines.json"))
+'''
