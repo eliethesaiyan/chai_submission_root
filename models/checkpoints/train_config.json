@@ -1,0 +1,35 @@
+{
+  "model_name": "distilbert-base-uncased",
+  "seed": 42,
+  "lr": 2e-05,
+  "device": "cpu",
+  "batch_size": 8,
+  "num_epochs": 10,
+  "weight_decay": 0.01,
+  "labels": [
+    "O",
+    "B-age",
+    "I-age",
+    "B-sex",
+    "I-sex",
+    "B-symptoms",
+    "I-symptoms",
+    "B-diagnosis",
+    "I-diagnosis",
+    "B-medications",
+    "I-medications"
+  ],
+  "labels2id": {
+    "O": 0,
+    "B-age": 1,
+    "I-age": 2,
+    "B-sex": 3,
+    "I-sex": 4,
+    "B-symptoms": 5,
+    "I-symptoms": 6,
+    "B-diagnosis": 7,
+    "I-diagnosis": 8,
+    "B-medications": 9,
+    "I-medications": 10
+  }
+}
