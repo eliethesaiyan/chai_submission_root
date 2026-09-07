@@ -9,7 +9,9 @@ The following steps were followed:
 3. Drop the concepts of the duration of the symptoms.
 4. Building a vocabulary f the diagonses terms from clincal notes.
 5. Building a  medications from guidelines.
-this step can be reproduced as follows:
-```bash 
-./run.sh annotate
+
+This step can be reproduced as follows:
+
+```console 
+$ ./run.sh annotate
 ```
