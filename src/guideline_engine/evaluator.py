@@ -1,14 +1,14 @@
 import json
 from pathlib import Path
+from typing import Any
 
 
-GUIDELINES_PATH = Path(__file__).resolve().parent.parent.parent / "src/data/guidelines.json"
-print(GUIDELINES_PATH)
+GUIDELINES_PATH = Path(__file__).resolve().parents[2] / "src/data/guidelines.json"
 
 
 def load_guidelines(
-    path=GUIDELINES_PATH,
-):
+    path: str | Path = GUIDELINES_PATH,
+) -> dict[str, dict[str, list[str]]]:
     with open(
         path,
         "r",
@@ -20,7 +20,7 @@ def load_guidelines(
 GUIDELINES = load_guidelines()
 
 
-def normalize(value):
+def normalize(value: str | None) -> str | None:
     if value is None:
         return None
 
@@ -28,9 +28,9 @@ def normalize(value):
 
 
 def evaluate_medications(
-    medications,
-    guideline,
-):
+    medications: list[str],
+    guideline: dict[str, Any],
+) -> list[dict[str, str]]:
     recommended = {
         normalize(drug)
         for drug in guideline.get(
@@ -74,9 +74,9 @@ def evaluate_medications(
 
 
 def evaluate_required_tests(
-    observed_tests,
-    guideline,
-):
+    observed_tests: list[str],
+    guideline: dict[str, Any],
+) -> list[dict[str, str | bool]]:
     required_tests = guideline.get(
         "required_tests",
         [],
@@ -110,10 +110,10 @@ def evaluate_required_tests(
 
 
 def evaluate_guideline(
-    diagnosis,
-    medications,
-    observed_tests=None,
-):
+    diagnosis: str | None,
+    medications: list[str],
+    observed_tests: list[str] | None = None,
+) -> dict:
     if observed_tests is None:
         observed_tests = []
 
@@ -124,17 +124,47 @@ def evaluate_guideline(
     if not normalized_diagnosis:
         return {
             "status": "cannot_evaluate",
+            "diagnosis": diagnosis,
+            "medications": [
+                {
+                    "medication": medication,
+                    "status": "not_listed",
+                }
+                for medication in medications
+            ],
+            "recommended_medications_given": [],
+            "forbidden_medications": [],
+            "recommended_drugs": [],
+            "required_tests": [],
+            "missing_tests": [],
             "reason": "No diagnosis was extracted.",
         }
 
-    guideline = GUIDELINES.get(
-        normalized_diagnosis
+    guideline = next(
+        (
+            value
+            for name, value in GUIDELINES.items()
+            if normalize(name) == normalized_diagnosis
+        ),
+        None,
     )
 
     if guideline is None:
         return {
             "status": "guideline_not_found",
             "diagnosis": diagnosis,
+            "medications": [
+                {
+                    "medication": medication,
+                    "status": "not_listed",
+                }
+                for medication in medications
+            ],
+            "recommended_medications_given": [],
+            "forbidden_medications": [],
+            "recommended_drugs": [],
+            "required_tests": [],
+            "missing_tests": [],
             "reason": (
                 "No guideline is available "
                 "for the extracted diagnosis."
@@ -199,6 +229,60 @@ def evaluate_guideline(
         "missing_tests":
             missing_tests,
     }
+
+
+class GuidelineEvaluator:
+    """Configurable wrapper around the deterministic guideline decision logic."""
+
+    def __init__(
+        self,
+        guidelines_path: str | Path,
+        predictions_path: str | Path,
+        output_path: str | Path,
+    ) -> None:
+        self.guidelines_path = Path(guidelines_path)
+        self.predictions_path = Path(predictions_path)
+        self.output_path = Path(output_path)
+
+        if self.guidelines_path.resolve() != GUIDELINES_PATH.resolve():
+            raise ValueError(
+                "The guideline engine must use src/data/guidelines.json; "
+                f"received {self.guidelines_path.resolve()}"
+            )
+
+    def evaluate(
+        self,
+        diagnosis: str | None,
+        medications: list[str],
+        observed_tests: list[str] | None = None,
+    ) -> dict:
+        return evaluate_guideline(
+            diagnosis=diagnosis,
+            medications=medications,
+            observed_tests=observed_tests,
+        )
+
+    def save(self, result: dict) -> None:
+        self.output_path.parent.mkdir(parents=True, exist_ok=True)
+        with self.output_path.open("w", encoding="utf-8") as file:
+            json.dump(result, file, indent=2, ensure_ascii=False)
+
+    def run(self) -> dict:
+        """Evaluate the structured entity-extraction output and save the result."""
+        with self.predictions_path.open("r", encoding="utf-8") as file:
+            prediction = json.load(file)
+        if not isinstance(prediction, dict):
+            raise ValueError(
+                f"Expected one structured prediction object in {self.predictions_path}"
+            )
+
+        result = self.evaluate(
+            diagnosis=prediction.get("diagnosis"),
+            medications=prediction.get("medications", []),
+            observed_tests=prediction.get("observed_tests"),
+        )
+        self.save(result)
+        return result
 
 
 def main():

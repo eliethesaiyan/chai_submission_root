@@ -35,3 +35,95 @@ It creates model data annotation provides a data analsysis summary as follow:
 [2026-09-08 00:10:15,464][__main__][INFO] -   ciprofloxacin: 3 recorded in clinical notes .
 [2026-09-08 00:10:15,464][__main__][INFO] -   azithromycin: 7 recorded in clinical notes .
 ```
+
+#### 2. Training.
+
+1. Tokenizing each clinical note with DistilBERT's fast tokenizer.
+2. Aligning character-level entity annotations with BIO token labels.
+3. Splitting the annotated notes into training and validation sets.
+4. Fine-tuning DistilBERT for token classification.
+5. Evaluating each epoch using precision, recall, and F1 score.
+6. Saving the best model, tokenizer, training configuration, and validation metrics in `models/checkpoints/`.
+
+This step can be reproduced as follows:
+
+```console
+$ ./run.sh train
+```
+
+It trains the entity extraction model and reports validation metrics as follows:
+
+```console
+[__main__][INFO] - Validation metrics:
+{
+  "eval_loss": 0.21514029800891876,
+  "eval_precision": 0.9661016949152542,
+  "eval_recall": 0.9827586206896551,
+  "eval_f1": 0.9743589743589743,
+  "epoch": 15.0
+}
+[__main__][INFO] - Saved model artifacts to models/checkpoints
+```
+
+The main training outputs are:
+
+```text
+models/checkpoints/
+├── config.json
+├── evaluation_metrics.json
+├── model.safetensors
+├── tokenizer.json
+├── tokenizer_config.json
+├── training_args.bin
+├── training_config.json
+└── vocab.txt
+```
+
+#### 3. Evaluation.
+
+1. Loading the extracted diagnosis and medications from `outputs/sample_predictions.json`.
+2. Loading the corresponding guideline from `src/data/guidelines.json`.
+3. Comparing each extracted medication with `recommended_drugs` and `avoid_drugs`.
+4. Classifying each medication as `recommended`, `avoid`, or `not_listed`.
+5. Checking observed tests against the guideline's `required_tests`.
+6. Saving the deterministic guideline decision to `outputs/guideline_evaluation.json`.
+
+This step can be reproduced as follows:
+
+```console
+$ ./run.sh guideline
+```
+
+It creates a guideline evaluation report as follows:
+
+```json
+{
+  "status": "evaluated",
+  "diagnosis": "pneumonia",
+  "medications": [
+    {
+      "medication": "amoxicillin",
+      "status": "recommended"
+    }
+  ],
+  "recommended_medications_given": [
+    "amoxicillin"
+  ],
+  "forbidden_medications": [],
+  "recommended_drugs": [
+    "amoxicillin",
+    "azithromycin"
+  ],
+  "required_tests": [
+    {
+      "test": "chest_xray",
+      "present": false
+    }
+  ],
+  "missing_tests": [
+    "chest_xray"
+  ]
+}
+```
+
+The decision contains only recommendations and required tests defined in `src/data/guidelines.json`.

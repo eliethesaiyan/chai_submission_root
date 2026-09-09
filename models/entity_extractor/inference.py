@@ -5,8 +5,8 @@ from transformers import(
     AutoTokenizer,
     AutoModelForTokenClassification
 )
-ROOT_DIR = Path(__file__).resolve().parent.parent.parent.parent
-MODEL_CHECKPOINT_DIR = ROOT_DIR /"src/models/checkpoints"
+ROOT_DIR = Path(__file__).resolve().parents[2]
+MODEL_CHECKPOINT_DIR = ROOT_DIR / "models/entity_extractor"
 DEVICE = torch.device(
     "cuda" if torch.cuda.is_available() else "cpu"
 )
@@ -130,7 +130,7 @@ def reconstruct_entities(
                 }
     if current_entity is not None:
         entities.append(current_entity)
-    
+
     for entity in entities:
         entity["text"] = text[
             entity["start"]:entity["end"]
@@ -422,6 +422,3 @@ if __name__ == "__main__":
             entities
         )
     )
-    
-
-    

@@ -21,17 +21,17 @@ case "$COMMAND" in
 
     train)
         echo "Training entity extraction model..."
-        python -m src.training.train
+        python -u -m src.training.run
         ;;
 
     predict)
         echo "Running entity extraction inference..."
-        python -m src.extraction.predictor
+        python -u -m src.extraction.run
         ;;
 
     guideline)
         echo "Running guideline evaluator..."
-        python -m src.guideline_engine.evaluator
+        python -u -m src.guideline_engine.run
         ;;
 
     explain)
@@ -41,7 +41,7 @@ case "$COMMAND" in
 
     evaluate)
         echo "Running model evaluation..."
-        python -m src.evaluation.evaluate
+        python -m src.evaluation.run
         ;;
 
     api)

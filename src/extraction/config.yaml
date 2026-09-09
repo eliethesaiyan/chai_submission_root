@@ -1,0 +1,14 @@
+paths:
+  data_dir: ${root:}/src/data
+  model_dir: ${root:}/models/entity_extractor
+  outputs_dir: ${root:}/outputs
+
+predictor:
+  _target_: src.extraction.predictor.EntityPredictor
+  model_dir: ${paths.model_dir}
+  output_path: ${paths.outputs_dir}/sample_predictions.json
+  clinical_note: >-
+    45 year old male with fever and productive cough for five days.
+    Diagnosed with pneumonia. Started on amoxicillin.
+  max_length: 128
+  device: auto

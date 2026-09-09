@@ -1,0 +1,9 @@
+paths:
+  data_dir: ${root:}/src/data
+  outputs_dir: ${root:}/outputs
+
+evaluator:
+  _target_: src.evaluation.evaluate.EntityEvaluator
+  annotations_path: ${paths.data_dir}/annotations.json
+  predictions_path: ${paths.outputs_dir}/sample_predictions.json
+  output_path: ${paths.outputs_dir}/evaluation_metrics.json

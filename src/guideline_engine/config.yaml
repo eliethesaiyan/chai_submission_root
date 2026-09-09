@@ -1,0 +1,10 @@
+paths:
+  guidelines: ${root:}/src/data/guidelines.json
+  predictions: ${root:}/outputs/sample_predictions.json
+  evaluation: ${root:}/outputs/guideline_evaluation.json
+
+evaluator:
+  _target_: src.guideline_engine.evaluator.GuidelineEvaluator
+  guidelines_path: ${paths.guidelines}
+  predictions_path: ${paths.predictions}
+  output_path: ${paths.evaluation}

@@ -1,0 +1,29 @@
+paths:
+  annotations: ${root:}/src/data/annotations.json
+  checkpoints: ${root:}/models/checkpoints
+
+trainer:
+  _target_: src.training.train.EntityTrainer
+  annotations_path: ${paths.annotations}
+  output_dir: ${paths.checkpoints}
+  model_name: distilbert-base-uncased
+  labels:
+    - O
+    - B-age
+    - I-age
+    - B-sex
+    - I-sex
+    - B-symptoms
+    - I-symptoms
+    - B-diagnosis
+    - I-diagnosis
+    - B-medications
+    - I-medications
+  seed: 42
+  validation_size: 0.2
+  max_length: 128
+  learning_rate: 2.0e-5
+  batch_size: 8
+  num_epochs: 15
+  weight_decay: 0.01
+  save_total_limit: 2
