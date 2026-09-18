@@ -30,7 +30,7 @@ from src.models.entity_extractor.tokenization import(
     tokenizer,
     tokenize_and_align_labels,
 )
-from src.preprocessing.preprocess import(
+from src.preprocessing.utils import(
     set_seed, 
     load_json_file
 )

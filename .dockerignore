@@ -1,0 +1,10 @@
+.git
+.agents
+.codex
+.venv
+**/__pycache__
+**/.pytest_cache
+outputs
+models/checkpoints
+models/entity_extractor/checkpoint-*
+*.zip

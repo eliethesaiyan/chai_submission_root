@@ -28,10 +28,11 @@ def tokenize_and_align_labels(
     """Tokenize one note and align character-span entities to BIO labels."""
     encoding = tokenizer(
         note["text"],
-        truncation=True,
-        max_length=max_length,
+        truncation=False,
         return_offsets_mapping=True,
     )
+    if len(encoding["input_ids"]) > max_length:
+        raise ValueError(f"Training note {note.get('note_id')} exceeds max_length={max_length}")
     labels: list[int] = []
     previous_entity: dict[str, Any] | None = None
 
@@ -84,3 +85,16 @@ class ClinicalEntityDataset(Dataset):
             self.label_to_id,
             self.max_length,
         )
+
+
+if __name__ == "__main__":
+    import json
+    from pathlib import Path
+    from transformers import AutoTokenizer
+    root = Path(__file__).resolve().parents[2]
+    model_dir = root / "models/entity_extractor"
+    tokenizer = AutoTokenizer.from_pretrained(model_dir, local_files_only=True)
+    labels = json.loads((model_dir / "config.json").read_text())["label2id"]
+    notes = json.loads((root / "src/data/annotations.json").read_text())
+    encodings = [tokenize_and_align_labels(n, tokenizer, labels, 128) for n in notes]
+    print(f"Validated BIO alignment for {len(encodings)} notes; max tokens: {max(len(e['input_ids']) for e in encodings)}")

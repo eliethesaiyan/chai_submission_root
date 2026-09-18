@@ -1,12 +1,13 @@
 paths:
   annotations: ${root:}/src/data/annotations.json
-  checkpoints: ${root:}/models/checkpoints
+  checkpoints: ${root:}/models/entity_extractor
 
 trainer:
   _target_: src.training.train.EntityTrainer
   annotations_path: ${paths.annotations}
   output_dir: ${paths.checkpoints}
   model_name: distilbert-base-uncased
+  model_revision: 12040accade4e8a0f71eabdb258fecc2e7e948be
   labels:
     - O
     - B-age

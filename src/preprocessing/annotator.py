@@ -2,7 +2,7 @@ import re, json
 
 from pathlib import Path
 from src.preprocessing.utils import make_entity_from_text
-from src.preprocessing.dataset_analysis import (
+from src.preprocessing.utils import (
     load_json_file,
     extract_age_from_text,
     extract_sex_from_text,
@@ -56,7 +56,7 @@ class Annotator(object):
             flags=re.IGNORECASE,
         )
 
-        valid_symptoms = [symptom.strip() for symptom in re.split(r",|and", symptom_text) if symptom.strip()]
+        valid_symptoms = [symptom.strip() for symptom in re.split(r",|\band\b", symptom_text) if symptom.strip()]
         symptom_section_start = match.start(1)
         search_position = symptom_section_start
         # find symptom entities offset in the text
@@ -96,9 +96,9 @@ class Annotator(object):
     """
         medications = set() 
         for rules in self.guidelines.values():
-            for rule in rules["recommended_drugs"]:
+            for rule in rules.get("recommended_drugs", []):
                 medications.add(rule)
-            for rule in rules["avoid_drugs"]:
+            for rule in rules.get("avoid_drugs",[]):
                 medications.add(rule)
         #medications = [item for sublist in medications for item in sublist]  # Flatten
 
@@ -165,13 +165,13 @@ class Annotator(object):
         """
         entities = []
         text = note.get("text", "")
-        note_id = note.get("id", "")
+        note_id = note.get("note_id", note.get("id", ""))
         age, age_start, age_end = extract_age_from_text(text)
         age_entity = make_entity_from_text(text, age_start, age_end, "age") if age is not None else None
         sex, sex_start, sex_end = extract_sex_from_text(text)
         sex_entity =make_entity_from_text(text, sex_start, sex_end, "sex") if sex is not None else None
 
-        entities.extend([age_entity,sex_entity])
+        entities.extend(entity for entity in [age_entity, sex_entity] if entity is not None)
         entities.extend(self.extract_symptoms_from_text(text))
         entities.extend(self.extract_diagnosis_from_text(text, diagnostic_conditions))
         entities.extend(self.extract_medications_from_text(text, medications))

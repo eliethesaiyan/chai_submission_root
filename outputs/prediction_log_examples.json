@@ -1,0 +1,58 @@
+[
+  {
+    "event": "model_loaded",
+    "model_version": "distilbert-clinical-v1-473c169b4cb6",
+    "guideline_version": "9cd534ffb9eb"
+  },
+  {
+    "event": "prediction",
+    "request_id": "0bc3bbd5-b804-4b0d-b7f1-a90514b62de0",
+    "model_version": "distilbert-clinical-v1-473c169b4cb6",
+    "guideline_version": "9cd534ffb9eb",
+    "entity_counts": {
+      "age": 1,
+      "sex": 1,
+      "symptoms": 2,
+      "diagnosis": 1,
+      "medications": 1
+    },
+    "assessment_status": "evaluated",
+    "compliant": true,
+    "warning_count": 2,
+    "latency_ms": 71.508
+  },
+  {
+    "event": "prediction",
+    "request_id": "e5f65f30-c1fe-4007-a7eb-45b8e61a2a1e",
+    "model_version": "distilbert-clinical-v1-473c169b4cb6",
+    "guideline_version": "9cd534ffb9eb",
+    "entity_counts": {
+      "age": 1,
+      "sex": 1,
+      "symptoms": 3,
+      "diagnosis": 1,
+      "medications": 1
+    },
+    "assessment_status": "evaluated",
+    "compliant": false,
+    "warning_count": 4,
+    "latency_ms": 73.399
+  },
+  {
+    "event": "prediction",
+    "request_id": "deed7ab6-ab00-45e5-914e-888f47ff8454",
+    "model_version": "distilbert-clinical-v1-473c169b4cb6",
+    "guideline_version": "9cd534ffb9eb",
+    "entity_counts": {
+      "age": 1,
+      "sex": 1,
+      "symptoms": 1,
+      "diagnosis": 1,
+      "medications": 2
+    },
+    "assessment_status": "evaluated",
+    "compliant": true,
+    "warning_count": 2,
+    "latency_ms": 79.941
+  }
+]

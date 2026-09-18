@@ -1,0 +1,996 @@
+[
+  {
+    "note_id": "N001",
+    "text": "45 year old male with fever and productive cough for five days. Diagnosed with pneumonia. Started on amoxicillin.",
+    "structured_entities": {
+      "age": 45,
+      "sex": "male",
+      "symptoms": [
+        "fever",
+        "productive cough"
+      ],
+      "diagnosis": "pneumonia",
+      "medications": [
+        "amoxicillin"
+      ]
+    },
+    "guideline_assessment": {
+      "status": "evaluated",
+      "diagnosis": "pneumonia",
+      "guideline_version": "9cd534ffb9eb",
+      "compliant": true,
+      "fully_compliant": false,
+      "medications": [
+        {
+          "medication": "amoxicillin",
+          "status": "recommended"
+        }
+      ],
+      "recommended_medications_given": [
+        "amoxicillin"
+      ],
+      "forbidden_medications": [],
+      "recommended_drugs": [
+        "amoxicillin",
+        "azithromycin"
+      ],
+      "required_tests": [
+        {
+          "test": "chest_xray",
+          "present": false
+        }
+      ],
+      "missing_tests": [
+        "chest_xray"
+      ],
+      "warnings": [
+        "Required test not documented: chest_xray."
+      ],
+      "explanation": "Compared documented medications with recommended_drugs and avoid_drugs for 'pneumonia'. Recommended: amoxicillin; forbidden: none; unlisted: none. Required tests not documented: chest_xray. Medication compliance does not establish completeness of a multi-drug regimen."
+    },
+    "explanation": {
+      "method": "gradient_x_input",
+      "target": {
+        "label": "diagnosis",
+        "start": 79,
+        "end": 88,
+        "text": "pneumonia",
+        "score": 0.3048900067806244,
+        "assertion": "affirmed"
+      },
+      "token_importance": [
+        {
+          "text": "45",
+          "start": 0,
+          "end": 2,
+          "importance": 0.014456305902152635,
+          "signed_score": 0.014456305902152635
+        },
+        {
+          "text": "year",
+          "start": 3,
+          "end": 7,
+          "importance": 0.002756564589050683,
+          "signed_score": -0.002756564589050683
+        },
+        {
+          "text": "old",
+          "start": 8,
+          "end": 11,
+          "importance": 0.048038182049049,
+          "signed_score": -0.048038182049049
+        },
+        {
+          "text": "male",
+          "start": 12,
+          "end": 16,
+          "importance": 0.03567134660390871,
+          "signed_score": -0.03567134660390871
+        },
+        {
+          "text": "with",
+          "start": 17,
+          "end": 21,
+          "importance": 0.06721332987678526,
+          "signed_score": -0.06721332987678526
+        },
+        {
+          "text": "fever",
+          "start": 22,
+          "end": 27,
+          "importance": 0.022759916701995495,
+          "signed_score": 0.022759916701995495
+        },
+        {
+          "text": "and",
+          "start": 28,
+          "end": 31,
+          "importance": 0.022521646007435163,
+          "signed_score": -0.022521646007435163
+        },
+        {
+          "text": "productive",
+          "start": 32,
+          "end": 42,
+          "importance": 0.004224119572098222,
+          "signed_score": -0.004224119572098222
+        },
+        {
+          "text": "cough",
+          "start": 43,
+          "end": 48,
+          "importance": 0.012413951140538669,
+          "signed_score": 0.012413951140538669
+        },
+        {
+          "text": "for",
+          "start": 49,
+          "end": 52,
+          "importance": 0.015896081579939245,
+          "signed_score": -0.015896081579939245
+        },
+        {
+          "text": "five",
+          "start": 53,
+          "end": 57,
+          "importance": 0.00019524099626749616,
+          "signed_score": -0.00019524099626749616
+        },
+        {
+          "text": "days",
+          "start": 58,
+          "end": 62,
+          "importance": 0.011488016148079563,
+          "signed_score": 0.011488016148079563
+        },
+        {
+          "text": ".",
+          "start": 62,
+          "end": 63,
+          "importance": 0.08586840395025837,
+          "signed_score": 0.08586840395025837
+        },
+        {
+          "text": "Diagnosed",
+          "start": 64,
+          "end": 73,
+          "importance": 0.04232021778167282,
+          "signed_score": -0.04232021778167282
+        },
+        {
+          "text": "with",
+          "start": 74,
+          "end": 78,
+          "importance": 0.16077584997997832,
+          "signed_score": 0.16077584997997832
+        },
+        {
+          "text": "pneumonia",
+          "start": 79,
+          "end": 88,
+          "importance": 0.22223879192562832,
+          "signed_score": 0.22223879192562832
+        },
+        {
+          "text": ".",
+          "start": 88,
+          "end": 89,
+          "importance": 0.1515367936364835,
+          "signed_score": 0.1515367936364835
+        },
+        {
+          "text": "Started",
+          "start": 90,
+          "end": 97,
+          "importance": 0.006171976741879564,
+          "signed_score": -0.006171976741879564
+        },
+        {
+          "text": "on",
+          "start": 98,
+          "end": 100,
+          "importance": 0.015522885663180322,
+          "signed_score": -0.015522885663180322
+        },
+        {
+          "text": "am",
+          "start": 101,
+          "end": 103,
+          "importance": 0.005786983493752606,
+          "signed_score": -0.005786983493752606
+        },
+        {
+          "text": "ox",
+          "start": 103,
+          "end": 105,
+          "importance": 0.007220766344318577,
+          "signed_score": -0.007220766344318577
+        },
+        {
+          "text": "ici",
+          "start": 105,
+          "end": 108,
+          "importance": 0.01299102212368773,
+          "signed_score": -0.01299102212368773
+        },
+        {
+          "text": "llin",
+          "start": 108,
+          "end": 112,
+          "importance": 0.00854883670444677,
+          "signed_score": -0.00854883670444677
+        },
+        {
+          "text": ".",
+          "start": 112,
+          "end": 113,
+          "importance": 0.02338277048741297,
+          "signed_score": -0.02338277048741297
+        }
+      ],
+      "interpretation": "Importance is normalized absolute gradient \u00d7 embedding for mean diagnosis BIO log-probability. It measures local model sensitivity, not causation or clinical correctness.",
+      "entity_evidence": [
+        {
+          "label": "age",
+          "start": 0,
+          "end": 2,
+          "text": "45",
+          "score": 0.6449772715568542,
+          "assertion": "affirmed"
+        },
+        {
+          "label": "sex",
+          "start": 12,
+          "end": 16,
+          "text": "male",
+          "score": 0.5414998531341553,
+          "assertion": "affirmed"
+        },
+        {
+          "label": "symptoms",
+          "start": 22,
+          "end": 27,
+          "text": "fever",
+          "score": 0.5162757635116577,
+          "assertion": "affirmed"
+        },
+        {
+          "label": "symptoms",
+          "start": 32,
+          "end": 48,
+          "text": "productive cough",
+          "score": 0.32590076327323914,
+          "assertion": "affirmed"
+        },
+        {
+          "label": "diagnosis",
+          "start": 79,
+          "end": 88,
+          "text": "pneumonia",
+          "score": 0.3048900067806244,
+          "assertion": "affirmed"
+        },
+        {
+          "label": "medications",
+          "start": 101,
+          "end": 112,
+          "text": "amoxicillin",
+          "score": 0.6904538720846176,
+          "assertion": "affirmed"
+        }
+      ],
+      "medication_reasons": [
+        {
+          "medication": "amoxicillin",
+          "status": "recommended",
+          "reason": "Exact normalized comparison with supplied recommended_drugs/avoid_drugs: recommended."
+        }
+      ],
+      "guideline_reason": "Compared documented medications with recommended_drugs and avoid_drugs for 'pneumonia'. Recommended: amoxicillin; forbidden: none; unlisted: none. Required tests not documented: chest_xray. Medication compliance does not establish completeness of a multi-drug regimen.",
+      "test_evidence": [],
+      "limitations": [
+        "Small weakly labeled training set",
+        "Assertion rules are conservative heuristics",
+        "Scores are not calibrated",
+        "Attributions may reflect dataset shortcuts"
+      ]
+    },
+    "warnings": [
+      "At least one entity has a model score below 0.8; scores are not calibrated probabilities of correctness."
+    ],
+    "model_version": "distilbert-clinical-v1-473c169b4cb6",
+    "latency_ms": 66.89
+  },
+  {
+    "note_id": "N004",
+    "text": "25 year old female with dysuria and lower abdominal pain. Diagnosed urinary tract infection. Prescribed ciprofloxacin.",
+    "structured_entities": {
+      "age": 25,
+      "sex": "female",
+      "symptoms": [
+        "dysuria",
+        "lower",
+        "abdominal pain"
+      ],
+      "diagnosis": "urinary tract infection",
+      "medications": [
+        "ciprofloxacin"
+      ]
+    },
+    "guideline_assessment": {
+      "status": "evaluated",
+      "diagnosis": "urinary tract infection",
+      "guideline_version": "9cd534ffb9eb",
+      "compliant": false,
+      "fully_compliant": false,
+      "medications": [
+        {
+          "medication": "ciprofloxacin",
+          "status": "avoid"
+        }
+      ],
+      "recommended_medications_given": [],
+      "forbidden_medications": [
+        "ciprofloxacin"
+      ],
+      "recommended_drugs": [
+        "nitrofurantoin"
+      ],
+      "required_tests": [
+        {
+          "test": "urinalysis",
+          "present": false
+        }
+      ],
+      "missing_tests": [
+        "urinalysis"
+      ],
+      "warnings": [
+        "ciprofloxacin is forbidden by supplied guideline 'urinary tract infection'.",
+        "No recommended medication is documented.",
+        "Required test not documented: urinalysis."
+      ],
+      "explanation": "Compared documented medications with recommended_drugs and avoid_drugs for 'urinary tract infection'. Recommended: none; forbidden: ciprofloxacin; unlisted: none. Required tests not documented: urinalysis. Medication compliance does not establish completeness of a multi-drug regimen."
+    },
+    "explanation": {
+      "method": "gradient_x_input",
+      "target": {
+        "label": "diagnosis",
+        "start": 68,
+        "end": 91,
+        "text": "urinary tract infection",
+        "score": 0.5542179584503174,
+        "assertion": "affirmed"
+      },
+      "token_importance": [
+        {
+          "text": "25",
+          "start": 0,
+          "end": 2,
+          "importance": 0.009060820070497407,
+          "signed_score": -0.009060820070497407
+        },
+        {
+          "text": "year",
+          "start": 3,
+          "end": 7,
+          "importance": 0.004416912385431785,
+          "signed_score": -0.004416912385431785
+        },
+        {
+          "text": "old",
+          "start": 8,
+          "end": 11,
+          "importance": 0.00042307909895099224,
+          "signed_score": 0.00042307909895099224
+        },
+        {
+          "text": "female",
+          "start": 12,
+          "end": 18,
+          "importance": 0.009434499232270712,
+          "signed_score": -0.009434499232270712
+        },
+        {
+          "text": "with",
+          "start": 19,
+          "end": 23,
+          "importance": 0.011343109459588076,
+          "signed_score": -0.011343109459588076
+        },
+        {
+          "text": "d",
+          "start": 24,
+          "end": 25,
+          "importance": 0.0007747389775950909,
+          "signed_score": -0.0007747389775950909
+        },
+        {
+          "text": "ys",
+          "start": 25,
+          "end": 27,
+          "importance": 0.007584976363021981,
+          "signed_score": -0.007584976363021981
+        },
+        {
+          "text": "uria",
+          "start": 27,
+          "end": 31,
+          "importance": 0.0002538192913919982,
+          "signed_score": 0.0002538192913919982
+        },
+        {
+          "text": "and",
+          "start": 32,
+          "end": 35,
+          "importance": 0.009083093653349472,
+          "signed_score": -0.009083093653349472
+        },
+        {
+          "text": "lower",
+          "start": 36,
+          "end": 41,
+          "importance": 0.006930498304790181,
+          "signed_score": -0.006930498304790181
+        },
+        {
+          "text": "abdominal",
+          "start": 42,
+          "end": 51,
+          "importance": 0.017956455235346575,
+          "signed_score": -0.017956455235346575
+        },
+        {
+          "text": "pain",
+          "start": 52,
+          "end": 56,
+          "importance": 0.019408009872158707,
+          "signed_score": 0.019408009872158707
+        },
+        {
+          "text": ".",
+          "start": 56,
+          "end": 57,
+          "importance": 0.03826961611361767,
+          "signed_score": -0.03826961611361767
+        },
+        {
+          "text": "Diagnosed",
+          "start": 58,
+          "end": 67,
+          "importance": 0.15721998777116558,
+          "signed_score": -0.15721998777116558
+        },
+        {
+          "text": "ur",
+          "start": 68,
+          "end": 70,
+          "importance": 0.17007270469260233,
+          "signed_score": -0.17007270469260233
+        },
+        {
+          "text": "ina",
+          "start": 70,
+          "end": 73,
+          "importance": 0.16564909502554606,
+          "signed_score": -0.16564909502554606
+        },
+        {
+          "text": "ry",
+          "start": 73,
+          "end": 75,
+          "importance": 0.09859881093018848,
+          "signed_score": -0.09859881093018848
+        },
+        {
+          "text": "tract",
+          "start": 76,
+          "end": 81,
+          "importance": 0.09996345533731742,
+          "signed_score": -0.09996345533731742
+        },
+        {
+          "text": "infection",
+          "start": 82,
+          "end": 91,
+          "importance": 0.08380269731276133,
+          "signed_score": -0.08380269731276133
+        },
+        {
+          "text": ".",
+          "start": 91,
+          "end": 92,
+          "importance": 0.004632864655582331,
+          "signed_score": 0.004632864655582331
+        },
+        {
+          "text": "Prescribed",
+          "start": 93,
+          "end": 103,
+          "importance": 0.0455289651286488,
+          "signed_score": -0.0455289651286488
+        },
+        {
+          "text": "ci",
+          "start": 104,
+          "end": 106,
+          "importance": 0.009663098727832485,
+          "signed_score": -0.009663098727832485
+        },
+        {
+          "text": "pro",
+          "start": 106,
+          "end": 109,
+          "importance": 0.00572676830137952,
+          "signed_score": 0.00572676830137952
+        },
+        {
+          "text": "fl",
+          "start": 109,
+          "end": 111,
+          "importance": 0.00175581174705474,
+          "signed_score": 0.00175581174705474
+        },
+        {
+          "text": "ox",
+          "start": 111,
+          "end": 113,
+          "importance": 0.007002961316136138,
+          "signed_score": 0.007002961316136138
+        },
+        {
+          "text": "ac",
+          "start": 113,
+          "end": 115,
+          "importance": 0.0031488404155814685,
+          "signed_score": 0.0031488404155814685
+        },
+        {
+          "text": "in",
+          "start": 115,
+          "end": 117,
+          "importance": 0.0034342529511637468,
+          "signed_score": 0.0034342529511637468
+        },
+        {
+          "text": ".",
+          "start": 117,
+          "end": 118,
+          "importance": 0.008860057629028934,
+          "signed_score": 0.008860057629028934
+        }
+      ],
+      "interpretation": "Importance is normalized absolute gradient \u00d7 embedding for mean diagnosis BIO log-probability. It measures local model sensitivity, not causation or clinical correctness.",
+      "entity_evidence": [
+        {
+          "label": "age",
+          "start": 0,
+          "end": 2,
+          "text": "25",
+          "score": 0.5812087059020996,
+          "assertion": "affirmed"
+        },
+        {
+          "label": "sex",
+          "start": 12,
+          "end": 18,
+          "text": "female",
+          "score": 0.549249529838562,
+          "assertion": "affirmed"
+        },
+        {
+          "label": "symptoms",
+          "start": 24,
+          "end": 31,
+          "text": "dysuria",
+          "score": 0.3894584079583486,
+          "assertion": "affirmed"
+        },
+        {
+          "label": "symptoms",
+          "start": 36,
+          "end": 41,
+          "text": "lower",
+          "score": 0.29864180088043213,
+          "assertion": "affirmed"
+        },
+        {
+          "label": "symptoms",
+          "start": 42,
+          "end": 56,
+          "text": "abdominal pain",
+          "score": 0.29481474310159683,
+          "assertion": "affirmed"
+        },
+        {
+          "label": "diagnosis",
+          "start": 68,
+          "end": 91,
+          "text": "urinary tract infection",
+          "score": 0.5542179584503174,
+          "assertion": "affirmed"
+        },
+        {
+          "label": "medications",
+          "start": 104,
+          "end": 117,
+          "text": "ciprofloxacin",
+          "score": 0.6841112772623698,
+          "assertion": "affirmed"
+        }
+      ],
+      "medication_reasons": [
+        {
+          "medication": "ciprofloxacin",
+          "status": "avoid",
+          "reason": "Exact normalized comparison with supplied recommended_drugs/avoid_drugs: avoid."
+        }
+      ],
+      "guideline_reason": "Compared documented medications with recommended_drugs and avoid_drugs for 'urinary tract infection'. Recommended: none; forbidden: ciprofloxacin; unlisted: none. Required tests not documented: urinalysis. Medication compliance does not establish completeness of a multi-drug regimen.",
+      "test_evidence": [],
+      "limitations": [
+        "Small weakly labeled training set",
+        "Assertion rules are conservative heuristics",
+        "Scores are not calibrated",
+        "Attributions may reflect dataset shortcuts"
+      ]
+    },
+    "warnings": [
+      "At least one entity has a model score below 0.8; scores are not calibrated probabilities of correctness."
+    ],
+    "model_version": "distilbert-clinical-v1-473c169b4cb6",
+    "latency_ms": 66.01
+  },
+  {
+    "note_id": "N021",
+    "text": "58 year old male with chest pain. ECG suggests myocardial infarction. Started aspirin and atorvastatin.",
+    "structured_entities": {
+      "age": 58,
+      "sex": "male",
+      "symptoms": [
+        "chest pain"
+      ],
+      "diagnosis": "myocardial infarction",
+      "medications": [
+        "aspirin",
+        "atorvastatin"
+      ]
+    },
+    "guideline_assessment": {
+      "status": "evaluated",
+      "diagnosis": "myocardial infarction",
+      "guideline_version": "9cd534ffb9eb",
+      "compliant": true,
+      "fully_compliant": true,
+      "medications": [
+        {
+          "medication": "aspirin",
+          "status": "recommended"
+        },
+        {
+          "medication": "atorvastatin",
+          "status": "recommended"
+        }
+      ],
+      "recommended_medications_given": [
+        "aspirin",
+        "atorvastatin"
+      ],
+      "forbidden_medications": [],
+      "recommended_drugs": [
+        "aspirin",
+        "atorvastatin"
+      ],
+      "required_tests": [
+        {
+          "test": "ecg",
+          "present": true
+        }
+      ],
+      "missing_tests": [],
+      "warnings": [],
+      "explanation": "Compared documented medications with recommended_drugs and avoid_drugs for 'myocardial infarction'. Recommended: aspirin, atorvastatin; forbidden: none; unlisted: none. Required tests not documented: none. Medication compliance does not establish completeness of a multi-drug regimen."
+    },
+    "explanation": {
+      "method": "gradient_x_input",
+      "target": {
+        "label": "diagnosis",
+        "start": 47,
+        "end": 68,
+        "text": "myocardial infarction",
+        "score": 0.5799767027298609,
+        "assertion": "uncertain"
+      },
+      "token_importance": [
+        {
+          "text": "58",
+          "start": 0,
+          "end": 2,
+          "importance": 0.023140400764215908,
+          "signed_score": -0.023140400764215908
+        },
+        {
+          "text": "year",
+          "start": 3,
+          "end": 7,
+          "importance": 0.02530203959184794,
+          "signed_score": -0.02530203959184794
+        },
+        {
+          "text": "old",
+          "start": 8,
+          "end": 11,
+          "importance": 0.025848082597479116,
+          "signed_score": -0.025848082597479116
+        },
+        {
+          "text": "male",
+          "start": 12,
+          "end": 16,
+          "importance": 0.04484608143431851,
+          "signed_score": -0.04484608143431851
+        },
+        {
+          "text": "with",
+          "start": 17,
+          "end": 21,
+          "importance": 0.0020700260145152475,
+          "signed_score": -0.0020700260145152475
+        },
+        {
+          "text": "chest",
+          "start": 22,
+          "end": 27,
+          "importance": 0.05470064358777963,
+          "signed_score": -0.05470064358777963
+        },
+        {
+          "text": "pain",
+          "start": 28,
+          "end": 32,
+          "importance": 0.04631263511749524,
+          "signed_score": -0.04631263511749524
+        },
+        {
+          "text": ".",
+          "start": 32,
+          "end": 33,
+          "importance": 0.0633599750083117,
+          "signed_score": -0.0633599750083117
+        },
+        {
+          "text": "EC",
+          "start": 34,
+          "end": 36,
+          "importance": 0.0070894084136961764,
+          "signed_score": -0.0070894084136961764
+        },
+        {
+          "text": "G",
+          "start": 36,
+          "end": 37,
+          "importance": 0.019171934363160194,
+          "signed_score": -0.019171934363160194
+        },
+        {
+          "text": "suggests",
+          "start": 38,
+          "end": 46,
+          "importance": 0.12439075997430599,
+          "signed_score": -0.12439075997430599
+        },
+        {
+          "text": "my",
+          "start": 47,
+          "end": 49,
+          "importance": 0.151807049245062,
+          "signed_score": -0.151807049245062
+        },
+        {
+          "text": "oca",
+          "start": 49,
+          "end": 52,
+          "importance": 0.04214192210897024,
+          "signed_score": 0.04214192210897024
+        },
+        {
+          "text": "rdial",
+          "start": 52,
+          "end": 57,
+          "importance": 0.054748760821295775,
+          "signed_score": -0.054748760821295775
+        },
+        {
+          "text": "in",
+          "start": 58,
+          "end": 60,
+          "importance": 0.11872596082169627,
+          "signed_score": -0.11872596082169627
+        },
+        {
+          "text": "far",
+          "start": 60,
+          "end": 63,
+          "importance": 0.03850436556675953,
+          "signed_score": -0.03850436556675953
+        },
+        {
+          "text": "ction",
+          "start": 63,
+          "end": 68,
+          "importance": 0.05218858634657494,
+          "signed_score": -0.05218858634657494
+        },
+        {
+          "text": ".",
+          "start": 68,
+          "end": 69,
+          "importance": 0.06817913268587622,
+          "signed_score": 0.06817913268587622
+        },
+        {
+          "text": "Started",
+          "start": 70,
+          "end": 77,
+          "importance": 0.0006327112994683106,
+          "signed_score": 0.0006327112994683106
+        },
+        {
+          "text": "as",
+          "start": 78,
+          "end": 80,
+          "importance": 0.010763466523046763,
+          "signed_score": 0.010763466523046763
+        },
+        {
+          "text": "pi",
+          "start": 80,
+          "end": 82,
+          "importance": 0.0016622685839530478,
+          "signed_score": 0.0016622685839530478
+        },
+        {
+          "text": "rin",
+          "start": 82,
+          "end": 85,
+          "importance": 0.0008271773195824318,
+          "signed_score": -0.0008271773195824318
+        },
+        {
+          "text": "and",
+          "start": 86,
+          "end": 89,
+          "importance": 0.002182414511933775,
+          "signed_score": -0.002182414511933775
+        },
+        {
+          "text": "at",
+          "start": 90,
+          "end": 92,
+          "importance": 0.0076839383102894065,
+          "signed_score": -0.0076839383102894065
+        },
+        {
+          "text": "or",
+          "start": 92,
+          "end": 94,
+          "importance": 0.004681024644682084,
+          "signed_score": 0.004681024644682084
+        },
+        {
+          "text": "vas",
+          "start": 94,
+          "end": 97,
+          "importance": 0.0006167373016166448,
+          "signed_score": 0.0006167373016166448
+        },
+        {
+          "text": "tat",
+          "start": 97,
+          "end": 100,
+          "importance": 0.00632424183254627,
+          "signed_score": 0.00632424183254627
+        },
+        {
+          "text": "in",
+          "start": 100,
+          "end": 102,
+          "importance": 0.0006689948155071781,
+          "signed_score": -0.0006689948155071781
+        },
+        {
+          "text": ".",
+          "start": 102,
+          "end": 103,
+          "importance": 0.0014292603940134708,
+          "signed_score": 0.0014292603940134708
+        }
+      ],
+      "interpretation": "Importance is normalized absolute gradient \u00d7 embedding for mean diagnosis BIO log-probability. It measures local model sensitivity, not causation or clinical correctness.",
+      "entity_evidence": [
+        {
+          "label": "age",
+          "start": 0,
+          "end": 2,
+          "text": "58",
+          "score": 0.6231169700622559,
+          "assertion": "affirmed"
+        },
+        {
+          "label": "sex",
+          "start": 12,
+          "end": 16,
+          "text": "male",
+          "score": 0.5523875951766968,
+          "assertion": "affirmed"
+        },
+        {
+          "label": "symptoms",
+          "start": 22,
+          "end": 32,
+          "text": "chest pain",
+          "score": 0.37289221584796906,
+          "assertion": "affirmed"
+        },
+        {
+          "label": "diagnosis",
+          "start": 47,
+          "end": 68,
+          "text": "myocardial infarction",
+          "score": 0.5799767027298609,
+          "assertion": "uncertain"
+        },
+        {
+          "label": "medications",
+          "start": 78,
+          "end": 85,
+          "text": "aspirin",
+          "score": 0.6313238938649496,
+          "assertion": "affirmed"
+        },
+        {
+          "label": "medications",
+          "start": 90,
+          "end": 102,
+          "text": "atorvastatin",
+          "score": 0.666233229637146,
+          "assertion": "affirmed"
+        }
+      ],
+      "medication_reasons": [
+        {
+          "medication": "aspirin",
+          "status": "recommended",
+          "reason": "Exact normalized comparison with supplied recommended_drugs/avoid_drugs: recommended."
+        },
+        {
+          "medication": "atorvastatin",
+          "status": "recommended",
+          "reason": "Exact normalized comparison with supplied recommended_drugs/avoid_drugs: recommended."
+        }
+      ],
+      "guideline_reason": "Compared documented medications with recommended_drugs and avoid_drugs for 'myocardial infarction'. Recommended: aspirin, atorvastatin; forbidden: none; unlisted: none. Required tests not documented: none. Medication compliance does not establish completeness of a multi-drug regimen.",
+      "test_evidence": [
+        {
+          "test": "ecg",
+          "text": "ECG",
+          "start": 34,
+          "end": 37,
+          "source": "affirmative_note_mention"
+        }
+      ],
+      "limitations": [
+        "Small weakly labeled training set",
+        "Assertion rules are conservative heuristics",
+        "Scores are not calibrated",
+        "Attributions may reflect dataset shortcuts"
+      ]
+    },
+    "warnings": [
+      "Diagnosis is uncertain in the note; the guideline assessment is conditional.",
+      "At least one entity has a model score below 0.8; scores are not calibrated probabilities of correctness."
+    ],
+    "model_version": "distilbert-clinical-v1-473c169b4cb6",
+    "latency_ms": 66.1
+  }
+]

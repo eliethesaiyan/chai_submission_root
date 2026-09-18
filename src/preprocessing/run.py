@@ -1,92 +1,48 @@
-import os
-import hydra
-import pyrootutils
-from hydra.utils import instantiate
-from omegaconf import DictConfig, OmegaConf
+"""Validate source data, generate weak labels, and report dataset coverage."""
+import json
+from collections import Counter
+from pathlib import Path
 
-from src.preprocessing.utils import (
-    get_logger, 
-    save_json_file,
-    extract_age_from_text,
-    extract_sex_from_text,
-    word_frequencies_counter,
-    )
-from collections import defaultdict
-from src.preprocessing import annotator
+from src.preprocessing.annotator import Annotator
+from src.preprocessing.utils import normalize_text
+
+ROOT = Path(__file__).resolve().parents[2]
 
 
-
-root = pyrootutils.setup_root(__file__, dotenv=True, pythonpath=True)
-OmegaConf.register_new_resolver(
-    "root",
-    lambda: str(root),
-)
-
-logger = get_logger(__name__)
-
-@hydra.main(version_base=None, config_path=str(root / "src/preprocessing"), config_name="config")
-def main(cfg: DictConfig) -> None:
-    logger.info(OmegaConf.to_yaml(cfg))
-
-    annotator = instantiate(cfg.annotator)
-
-    diagnostic_conditions = annotator.build_diagnostic_vocabulary()
+def main():
+    data = ROOT / "src/data"
+    annotator = Annotator(data, data / "clinical_notes.json", data / "guidelines.json", data / "annotations.json")
+    notes = annotator.clinical_notes
+    ids = [note["note_id"] for note in notes]
+    if len(ids) != len(set(ids)) or any(not n["text"].strip() for n in notes):
+        raise ValueError("Notes must have unique IDs and nonempty text")
+    diagnoses = annotator.build_diagnostic_vocabulary()
     medications = annotator.build_medication_vocabulary()
-    logger.info(f"Loaded {annotator.clinical_notes} clinical notes.")
-    annotations = []
-    for note in annotator.clinical_notes:
-        annotated_note = annotator.annotate_entities_in_text(note, diagnostic_conditions, medications)
-        annotations.append(annotated_note)
-        logger.info(len(annotated_note))
-        clinical_fields =  annotator.build_clinical_fields_from_annotated_note(annotated_note=annotated_note)
-        logger.info(f"Extracted entities from note {annotated_note['note_id']}: {clinical_fields}")
-    logger.info(f"saving data annotation at {annotator.output_path}")
-    save_json_file(data=annotations, file_path=annotator.output_path)
+    annotations = [annotator.annotate_entities_in_text(n, diagnoses, medications) for n in notes]
+    for note in annotations:
+        end = 0
+        for entity in note["entities"]:
+            assert end <= entity["start"] < entity["end"] <= len(note["text"])
+            assert entity["text"] == note["text"][entity["start"]:entity["end"]]
+            end = entity["end"]
+    (data / "annotations.json").write_text(json.dumps(annotations, indent=2) + "\n")
+    normalized = [{**n, "normalized_text": normalize_text(n["text"])} for n in notes]
+    (data / "normalized_notes.json").write_text(json.dumps(normalized, indent=2) + "\n")
+    counts = {label: Counter(e["text"].lower() for n in annotations for e in n["entities"] if e["label"] == label)
+              for label in ["sex", "diagnosis", "medications", "symptoms"]}
+    ages = [int(e["text"]) for n in annotations for e in n["entities"] if e["label"] == "age"]
+    report = {"notes": len(notes), "guidelines": len(annotator.guidelines), "age_min": min(ages),
+              "age_max": max(ages), "counts": counts,
+              "guidelines_without_training_examples": sorted(set(diagnoses) - set(counts["diagnosis"])),
+              "annotation_source": "Deterministic weak supervision; not clinician-validated ground truth",
+              "normalization": "Lowercase/whitespace normalization for analysis; raw text retained for character offsets. DistilBERT uncased WordPiece normalizes model input.",
+              "challenges": ["Only 50 highly templated notes", "No expert entity labels supplied",
+                             "Nine guidelines have no corresponding notes", "Rare or absent negation, tests, doses, and multiple diagnoses",
+                             "Suspected diagnoses must not be interpreted as confirmed disease"]}
+    (ROOT / "outputs").mkdir(exist_ok=True)
+    (ROOT / "outputs/data_summary.json").write_text(json.dumps(report, indent=2) + "\n")
+    print(json.dumps(report, indent=2))
 
-
-    all_texts = [note.get("text", "") for note in annotator.clinical_notes]
-    combined_text = " ".join(all_texts)
-
-
-    # Extract age information from clinical notes
-    ages = [extract_age_from_text(note.get("text", "")) for note in annotator.clinical_notes]
-    ages = [age[0] for age in ages if age is not None]
-
-    # Extract sex information from clinical notes
-    sexes = [extract_sex_from_text(note.get("text", "")) for note in annotator.clinical_notes]
-    sexes = [sex[0] for sex in sexes if sex is not None]
-    male_count = sexes.count("male")
-    female_count = sexes.count("female")
-
-    diagnosis_counts = {}
-    medication_counts = defaultdict(int)
-
-    for diagnosis in annotator.guidelines:
-        diag_count = sum(diagnosis.lower() in note.get("text", "").lower() for note in annotator.clinical_notes)
-        diagnosis_counts[diagnosis] = diag_count 
-    for med in medications:
-        for note in annotator.clinical_notes:
-            if med.lower() in note['text'].lower():
-                medication_counts[med] =  medication_counts[med] + 1
-        
-    logger.info("Dataset Analysis Summary")
-    logger.info("=" * 50)
-    logger.info(f"Total Clinical Notes:{len(annotator.clinical_notes)}")
-    logger.info(f"Total Guidelines: {len(annotator.guidelines)}")
-    logger.info("Demographics Summary:")
-    population_size = len(ages)
-    logger.info(f"  Max Age: {max(ages)}")
-    logger.info(f"  Minimum Age: {min(ages)}")
-    logger.info(f"  Male Count: {male_count}")
-    logger.info(f"  Female Count: {female_count}")
-    logger.info("Diagnosis in clinical Counts Summary: 3 diags examples")
-
-    for diagnosis, count in list(diagnosis_counts.items())[:3]:
-        logger.info(f"  {diagnosis}: {count} recorded in clinical notes.")
-        
-    logger.info("Medications in clinical note Counts Summary: 3 meds examples")
-    for med, count in list(medication_counts.items())[:3]:
-        logger.info(f"  {med}: {count} recorded in clinical notes .")
 
 if __name__ == "__main__":
     main()

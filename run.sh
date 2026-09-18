@@ -1,72 +1,32 @@
 #!/usr/bin/env bash
-
-set -e
-
-# Always move to the project root.
+set -euo pipefail
 cd "$(dirname "$0")"
-
-COMMAND="${1:-}"
-
+export OMP_NUM_THREADS="${OMP_NUM_THREADS:-4}"
+export MKL_NUM_THREADS="${MKL_NUM_THREADS:-4}"
+PYTHON_BIN="${PYTHON_BIN:-python}"
+COMMAND="${1:-demo}"
+if [[ $# -gt 0 ]]; then shift; fi
 case "$COMMAND" in
-
-    annotate)
-        echo "Generating annotations..."
-        python -m src.preprocessing.run
+    demo) exec "$PYTHON_BIN" -m src.extraction.demo "$@" ;;
+    annotate) exec "$PYTHON_BIN" -m src.preprocessing.run "$@" ;;
+    tokenize) exec "$PYTHON_BIN" -m src.training.tokenization "$@" ;;
+    train) exec "$PYTHON_BIN" -u -m src.training.run hydra.run.dir=outputs/training hydra.output_subdir=null "$@" ;;
+    predict) exec "$PYTHON_BIN" -u -m src.extraction.run hydra.run.dir=outputs/inference hydra.output_subdir=null "$@" ;;
+    guideline) exec "$PYTHON_BIN" -m src.guideline_engine.run hydra.run.dir=outputs/guideline hydra.output_subdir=null "$@" ;;
+    explain) exec "$PYTHON_BIN" -m src.explainability.explainer "$@" ;;
+    evaluate) exec "$PYTHON_BIN" -m src.evaluation.run "$@" ;;
+    test) exec "$PYTHON_BIN" -m pytest -q -p no:cacheprovider src/evaluation/test_system.py "$@" ;;
+    api) exec "$PYTHON_BIN" -m uvicorn src.api.app:app --host "${HOST:-0.0.0.0}" --port "${PORT:-8000}" "$@" ;;
+    package) exec "$PYTHON_BIN" -m src.evaluation.package "$@" ;;
+    all)
+        "$PYTHON_BIN" -m src.preprocessing.run
+        "$PYTHON_BIN" -m src.evaluation.run
+        "$PYTHON_BIN" -m src.explainability.explainer
+        "$PYTHON_BIN" -m pytest -q -p no:cacheprovider src/evaluation/test_system.py
         ;;
-
-    tokenize)
-        echo "Testing tokenization..."
-        python -m src.training.tokenization
-        ;;
-
-    train)
-        echo "Training entity extraction model..."
-        python -u -m src.training.run
-        ;;
-
-    predict)
-        echo "Running entity extraction inference..."
-        python -u -m src.extraction.run
-        ;;
-
-    guideline)
-        echo "Running guideline evaluator..."
-        python -u -m src.guideline_engine.run
-        ;;
-
-    explain)
-        echo "Running explainability module..."
-        python -m src.explainability.explainer
-        ;;
-
-    evaluate)
-        echo "Running model evaluation..."
-        python -m src.evaluation.run
-        ;;
-
-    api)
-        HOST="${HOST:-0.0.0.0}"
-        PORT="${PORT:-8000}"
-
-        echo "Starting API at ${HOST}:${PORT}..."
-
-        exec python -m uvicorn src.api.app:app \
-            --host "$HOST" \
-            --port "$PORT"
-        ;;
-
     *)
-        echo "Usage: ./run.sh <command>"
-        echo ""
-        echo "Available commands:"
-        echo "  annotate    Generate training annotations"
-        echo "  tokenize    Test tokenization/BIO alignment"
-        echo "  train       Train the entity extraction model"
-        echo "  predict     Run entity extraction inference"
-        echo "  guideline   Run the guideline evaluator"
-        echo "  explain     Run the explainability module"
-        echo "  evaluate    Evaluate the entity extraction model"
-        echo "  api         Start the FastAPI server"
-        exit 1
-        ;;
+        echo "Usage: ./run.sh [demo|annotate|tokenize|train|predict|guideline|explain|evaluate|test|api|package|all]"
+        echo "No command runs the three-note demo using saved model weights."
+        echo "Set PYTHON_BIN to choose an environment. Training overrides: ./run.sh train trainer.num_epochs=15"
+        exit 1 ;;
 esac

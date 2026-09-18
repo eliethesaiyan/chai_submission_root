@@ -3,13 +3,17 @@
 from __future__ import annotations
 
 import json
+import hashlib
+import re
+import platform
+import importlib.metadata
 from collections import Counter
 from pathlib import Path
 from typing import Any
 
 import numpy as np
 from seqeval.metrics import f1_score, precision_score, recall_score
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GroupShuffleSplit
 from transformers import (
     AutoModelForTokenClassification,
     AutoTokenizer,
@@ -39,10 +43,12 @@ class EntityTrainer:
         num_epochs: float = 10,
         weight_decay: float = 0.01,
         save_total_limit: int = 2,
+        model_revision: str = "12040accade4e8a0f71eabdb258fecc2e7e948be",
     ) -> None:
         self.annotations_path = Path(annotations_path)
         self.output_dir = Path(output_dir)
         self.model_name = model_name
+        self.model_revision = model_revision
         self.labels = list(labels)
         self.seed = seed
         self.validation_size = validation_size
@@ -69,20 +75,26 @@ class EntityTrainer:
                 return str(entity.get("text", "")).lower()
         return None
 
-    def _split(self, annotations: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-        diagnoses = [self._diagnosis(note) for note in annotations]
-        counts = Counter(diagnoses)
-        validation_count = max(1, round(len(annotations) * self.validation_size))
-        can_stratify = (
-            all(diagnosis is not None and counts[diagnosis] >= 2 for diagnosis in diagnoses)
-            and validation_count >= len(counts)
-        )
-        return train_test_split(
-            annotations,
-            test_size=self.validation_size,
-            random_state=self.seed,
-            stratify=diagnoses if can_stratify else None,
-        )
+    @staticmethod
+    def template_group(note):
+        text = re.sub(r"^\d+ year old (?:male|female)\s*", "", note["text"].lower())
+        return re.sub(r"\s+", " ", text).strip()
+
+    def _split(self, annotations):
+        groups = [self.template_group(n) for n in annotations]
+        pool_idx, test_idx = next(GroupShuffleSplit(n_splits=1, test_size=0.2, random_state=self.seed).split(annotations, groups=groups))
+        pool = [annotations[i] for i in pool_idx]
+        train_idx, val_idx = next(GroupShuffleSplit(n_splits=1, test_size=self.validation_size / 0.8,
+                                                    random_state=self.seed).split(pool, groups=[self.template_group(n) for n in pool]))
+        train = [pool[i] for i in train_idx]
+        validation = [pool[i] for i in val_idx]
+        test = [annotations[i] for i in test_idx]
+        self.split_manifest = {"seed": self.seed, "method": "Group split by exact text after removing age/sex; test groups 20%, validation groups 20%",
+                               "train": [n["note_id"] for n in train], "validation": [n["note_id"] for n in validation],
+                               "test": [n["note_id"] for n in test]}
+        for name, notes in [("train", train), ("validation", validation), ("test", test)]:
+            self.split_manifest[name + "_diagnoses"] = dict(Counter(self._diagnosis(n) for n in notes))
+        return train, validation
 
     def _compute_metrics(self, evaluation: Any) -> dict[str, float]:
         predictions, labels = evaluation
@@ -107,10 +119,12 @@ class EntityTrainer:
         self.output_dir.mkdir(parents=True, exist_ok=True)
         annotations = self._load_annotations()
         train_notes, validation_notes = self._split(annotations)
+        (self.output_dir / "split_manifest.json").write_text(json.dumps(self.split_manifest, indent=2) + "\n")
 
-        tokenizer = AutoTokenizer.from_pretrained(self.model_name, use_fast=True)
+        tokenizer = AutoTokenizer.from_pretrained(self.model_name, revision=self.model_revision, use_fast=True)
         model = AutoModelForTokenClassification.from_pretrained(
             self.model_name,
+            revision=self.model_revision,
             num_labels=len(self.labels),
             id2label=self.id_to_label,
             label2id=self.label_to_id,
@@ -136,6 +150,9 @@ class EntityTrainer:
             save_total_limit=self.save_total_limit,
             seed=self.seed,
             report_to="none",
+            full_determinism=True,
+            save_safetensors=True,
+            disable_tqdm=True,
         )
         trainer = Trainer(
             model=model,
@@ -150,6 +167,15 @@ class EntityTrainer:
         metrics = trainer.evaluate()
         trainer.save_model(str(self.output_dir))
         tokenizer.save_pretrained(str(self.output_dir))
+
+        digest = hashlib.sha256((self.output_dir / "model.safetensors").read_bytes()).hexdigest()
+        metadata = {"model_version": "distilbert-clinical-v1-" + digest[:12], "sha256": digest,
+                    "base_model": self.model_name, "base_revision": getattr(model.config, "_commit_hash", None),
+                    "annotation_sha256": hashlib.sha256(self.annotations_path.read_bytes()).hexdigest(),
+                    "python": platform.python_version(), "label_source": "weak supervision; not clinician validated",
+                    "packages": {name: importlib.metadata.version(name) for name in ["torch", "transformers", "accelerate", "numpy", "scikit-learn", "seqeval"]},
+                    "seed": self.seed, "max_length": self.max_length}
+        (self.output_dir / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
 
         with (self.output_dir / "evaluation_metrics.json").open("w", encoding="utf-8") as file:
             json.dump(metrics, file, indent=2)

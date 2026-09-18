@@ -1,0 +1,600 @@
+{
+  "model_version": "distilbert-clinical-v1-473c169b4cb6",
+  "reference_source": "Automatic weak labels, not independent clinician annotations",
+  "limitations": "Grouped held-out notes remain templated; metrics measure agreement with weak labels, not clinical validity. Validation selects checkpoint; test is not used in fitting.",
+  "latency_ms": {
+    "median": 18.92012399912346,
+    "max": 23.93989299889654,
+    "samples": 50,
+    "includes_explanations": false
+  },
+  "splits": {
+    "train": {
+      "notes": 28,
+      "overall": {
+        "precision": 0.9248554913294798,
+        "recall": 0.9523809523809523,
+        "f1": 0.93841642228739,
+        "true_positives": 160,
+        "false_positives": 13,
+        "false_negatives": 8
+      },
+      "exact_note_accuracy": 0.75,
+      "by_label": {
+        "age": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 28,
+          "false_positives": 0,
+          "false_negatives": 0
+        },
+        "diagnosis": {
+          "precision": 0.92,
+          "recall": 0.8214285714285714,
+          "f1": 0.8679245283018867,
+          "true_positives": 23,
+          "false_positives": 2,
+          "false_negatives": 5
+        },
+        "medications": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 32,
+          "false_positives": 0,
+          "false_negatives": 0
+        },
+        "sex": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 28,
+          "false_positives": 0,
+          "false_negatives": 0
+        },
+        "symptoms": {
+          "precision": 0.8166666666666667,
+          "recall": 0.9423076923076923,
+          "f1": 0.8749999999999999,
+          "true_positives": 49,
+          "false_positives": 11,
+          "false_negatives": 3
+        }
+      },
+      "errors": [
+        {
+          "note_id": "N011",
+          "text": "28 year old male with fever and cough. Chest exam suggest pneumonia. Started azithromycin.",
+          "missing": [
+            {
+              "label": "diagnosis",
+              "start": 58,
+              "end": 67,
+              "text": "pneumonia"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "symptoms",
+              "start": 58,
+              "end": 67,
+              "text": "pneumonia"
+            }
+          ]
+        },
+        {
+          "note_id": "N014",
+          "text": "48 year old male with night sweats and chronic cough. Diagnosed tuberculosis. Started rifampicin, isoniazid.",
+          "missing": [
+            {
+              "label": "symptoms",
+              "start": 39,
+              "end": 52,
+              "text": "chronic cough"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "symptoms",
+              "start": 39,
+              "end": 46,
+              "text": "chronic"
+            },
+            {
+              "label": "symptoms",
+              "start": 47,
+              "end": 52,
+              "text": "cough"
+            }
+          ]
+        },
+        {
+          "note_id": "N020",
+          "text": "44 year old female with cough and fever. Diagnosed pneumonia. Given amoxicillin.",
+          "missing": [
+            {
+              "label": "diagnosis",
+              "start": 51,
+              "end": 60,
+              "text": "pneumonia"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "symptoms",
+              "start": 51,
+              "end": 60,
+              "text": "pneumonia"
+            }
+          ]
+        },
+        {
+          "note_id": "N033",
+          "text": "47 year old male with chronic cough and weight loss. Diagnosed tuberculosis. Started rifampicin, isoniazid.",
+          "missing": [
+            {
+              "label": "symptoms",
+              "start": 22,
+              "end": 35,
+              "text": "chronic cough"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "symptoms",
+              "start": 22,
+              "end": 29,
+              "text": "chronic"
+            },
+            {
+              "label": "symptoms",
+              "start": 30,
+              "end": 35,
+              "text": "cough"
+            }
+          ]
+        },
+        {
+          "note_id": "N040",
+          "text": "39 year old male with severe headache. Diagnosed migraine. Given paracetamol.",
+          "missing": [
+            {
+              "label": "diagnosis",
+              "start": 49,
+              "end": 57,
+              "text": "migraine"
+            },
+            {
+              "label": "symptoms",
+              "start": 22,
+              "end": 37,
+              "text": "severe headache"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "diagnosis",
+              "start": 52,
+              "end": 57,
+              "text": "raine"
+            },
+            {
+              "label": "symptoms",
+              "start": 22,
+              "end": 28,
+              "text": "severe"
+            },
+            {
+              "label": "symptoms",
+              "start": 29,
+              "end": 37,
+              "text": "headache"
+            },
+            {
+              "label": "symptoms",
+              "start": 49,
+              "end": 52,
+              "text": "mig"
+            }
+          ]
+        },
+        {
+          "note_id": "N046",
+          "text": "72 year old male with wheezing and breathlessness. Asthma exacerbation. Given salbutamol.",
+          "missing": [
+            {
+              "label": "diagnosis",
+              "start": 51,
+              "end": 70,
+              "text": "Asthma exacerbation"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "diagnosis",
+              "start": 58,
+              "end": 70,
+              "text": "exacerbation"
+            },
+            {
+              "label": "symptoms",
+              "start": 51,
+              "end": 57,
+              "text": "Asthma"
+            }
+          ]
+        },
+        {
+          "note_id": "N050",
+          "text": "42 year old female with cough and fever. Diagnosed pneumonia. Started amoxicillin.",
+          "missing": [
+            {
+              "label": "diagnosis",
+              "start": 51,
+              "end": 60,
+              "text": "pneumonia"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "symptoms",
+              "start": 51,
+              "end": 60,
+              "text": "pneumonia"
+            }
+          ]
+        }
+      ],
+      "structured_field_exact_accuracy": {
+        "age": 1.0,
+        "sex": 1.0,
+        "symptoms": 0.75,
+        "diagnosis": 0.8214285714285714,
+        "medications": 1.0
+      }
+    },
+    "validation": {
+      "notes": 11,
+      "overall": {
+        "precision": 0.875,
+        "recall": 0.9180327868852459,
+        "f1": 0.8959999999999999,
+        "true_positives": 56,
+        "false_positives": 8,
+        "false_negatives": 5
+      },
+      "exact_note_accuracy": 0.5454545454545454,
+      "by_label": {
+        "age": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 11,
+          "false_positives": 0,
+          "false_negatives": 0
+        },
+        "diagnosis": {
+          "precision": 0.8888888888888888,
+          "recall": 0.7272727272727273,
+          "f1": 0.7999999999999999,
+          "true_positives": 8,
+          "false_positives": 1,
+          "false_negatives": 3
+        },
+        "medications": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 11,
+          "false_positives": 0,
+          "false_negatives": 0
+        },
+        "sex": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 11,
+          "false_positives": 0,
+          "false_negatives": 0
+        },
+        "symptoms": {
+          "precision": 0.6818181818181818,
+          "recall": 0.8823529411764706,
+          "f1": 0.7692307692307693,
+          "true_positives": 15,
+          "false_positives": 7,
+          "false_negatives": 2
+        }
+      },
+      "errors": [
+        {
+          "note_id": "N004",
+          "text": "25 year old female with dysuria and lower abdominal pain. Diagnosed urinary tract infection. Prescribed ciprofloxacin.",
+          "missing": [
+            {
+              "label": "symptoms",
+              "start": 36,
+              "end": 56,
+              "text": "lower abdominal pain"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "symptoms",
+              "start": 36,
+              "end": 41,
+              "text": "lower"
+            },
+            {
+              "label": "symptoms",
+              "start": 42,
+              "end": 56,
+              "text": "abdominal pain"
+            }
+          ]
+        },
+        {
+          "note_id": "N010",
+          "text": "40 year old female with severe headache and blurred vision. Diagnosed migraine. Given paracetamol.",
+          "missing": [
+            {
+              "label": "symptoms",
+              "start": 24,
+              "end": 39,
+              "text": "severe headache"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "symptoms",
+              "start": 24,
+              "end": 30,
+              "text": "severe"
+            },
+            {
+              "label": "symptoms",
+              "start": 31,
+              "end": 39,
+              "text": "headache"
+            }
+          ]
+        },
+        {
+          "note_id": "N026",
+          "text": "71 year old male with wheezing. Asthma exacerbation. Given salbutamol.",
+          "missing": [
+            {
+              "label": "diagnosis",
+              "start": 32,
+              "end": 51,
+              "text": "Asthma exacerbation"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "diagnosis",
+              "start": 39,
+              "end": 51,
+              "text": "exacerbation"
+            },
+            {
+              "label": "symptoms",
+              "start": 32,
+              "end": 38,
+              "text": "Asthma"
+            }
+          ]
+        },
+        {
+          "note_id": "N037",
+          "text": "46 year old female with fever and cough. Diagnosed pneumonia. Given azithromycin.",
+          "missing": [
+            {
+              "label": "diagnosis",
+              "start": 51,
+              "end": 60,
+              "text": "pneumonia"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "symptoms",
+              "start": 51,
+              "end": 60,
+              "text": "pneumonia"
+            }
+          ]
+        },
+        {
+          "note_id": "N044",
+          "text": "53 year old male with cough, fever. Diagnosed pneumonia. Given amoxicillin.",
+          "missing": [
+            {
+              "label": "diagnosis",
+              "start": 46,
+              "end": 55,
+              "text": "pneumonia"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "symptoms",
+              "start": 46,
+              "end": 55,
+              "text": "pneumonia"
+            }
+          ]
+        }
+      ],
+      "structured_field_exact_accuracy": {
+        "age": 1.0,
+        "sex": 1.0,
+        "symptoms": 0.5454545454545454,
+        "diagnosis": 0.7272727272727273,
+        "medications": 1.0
+      }
+    },
+    "test": {
+      "notes": 11,
+      "overall": {
+        "precision": 0.9,
+        "recall": 0.9402985074626866,
+        "f1": 0.9197080291970803,
+        "true_positives": 63,
+        "false_positives": 7,
+        "false_negatives": 4
+      },
+      "exact_note_accuracy": 0.6363636363636364,
+      "by_label": {
+        "age": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 11,
+          "false_positives": 0,
+          "false_negatives": 0
+        },
+        "diagnosis": {
+          "precision": 0.8181818181818182,
+          "recall": 0.8181818181818182,
+          "f1": 0.8181818181818182,
+          "true_positives": 9,
+          "false_positives": 2,
+          "false_negatives": 2
+        },
+        "medications": {
+          "precision": 0.9285714285714286,
+          "recall": 0.9285714285714286,
+          "f1": 0.9285714285714286,
+          "true_positives": 13,
+          "false_positives": 1,
+          "false_negatives": 1
+        },
+        "sex": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "true_positives": 11,
+          "false_positives": 0,
+          "false_negatives": 0
+        },
+        "symptoms": {
+          "precision": 0.8260869565217391,
+          "recall": 0.95,
+          "f1": 0.8837209302325583,
+          "true_positives": 19,
+          "false_positives": 4,
+          "false_negatives": 1
+        }
+      },
+      "errors": [
+        {
+          "note_id": "N003",
+          "text": "60 year old male with chest pain radiating to left arm. Diagnosed myocardial infarction. Started aspirin and atorvastatin.",
+          "missing": [
+            {
+              "label": "symptoms",
+              "start": 22,
+              "end": 54,
+              "text": "chest pain radiating to left arm"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "diagnosis",
+              "start": 46,
+              "end": 50,
+              "text": "left"
+            },
+            {
+              "label": "symptoms",
+              "start": 22,
+              "end": 42,
+              "text": "chest pain radiating"
+            },
+            {
+              "label": "symptoms",
+              "start": 51,
+              "end": 54,
+              "text": "arm"
+            }
+          ]
+        },
+        {
+          "note_id": "N006",
+          "text": "70 year old female with shortness of breath and wheezing. Diagnosed asthma exacerbation. Given salbutamol nebulization.",
+          "missing": [
+            {
+              "label": "medications",
+              "start": 95,
+              "end": 105,
+              "text": "salbutamol"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "medications",
+              "start": 95,
+              "end": 118,
+              "text": "salbutamol nebulization"
+            }
+          ]
+        },
+        {
+          "note_id": "N016",
+          "text": "33 year old female with wheezing and shortness of breath. Asthma exacerbation. Given salbutamol.",
+          "missing": [
+            {
+              "label": "diagnosis",
+              "start": 58,
+              "end": 77,
+              "text": "Asthma exacerbation"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "diagnosis",
+              "start": 65,
+              "end": 77,
+              "text": "exacerbation"
+            },
+            {
+              "label": "symptoms",
+              "start": 58,
+              "end": 64,
+              "text": "Asthma"
+            }
+          ]
+        },
+        {
+          "note_id": "N030",
+          "text": "34 year old female with cough and chest pain. Diagnosed pneumonia. Started amoxicillin.",
+          "missing": [
+            {
+              "label": "diagnosis",
+              "start": 56,
+              "end": 65,
+              "text": "pneumonia"
+            }
+          ],
+          "spurious": [
+            {
+              "label": "symptoms",
+              "start": 56,
+              "end": 65,
+              "text": "pneumonia"
+            }
+          ]
+        }
+      ],
+      "structured_field_exact_accuracy": {
+        "age": 1.0,
+        "sex": 1.0,
+        "symptoms": 0.7272727272727273,
+        "diagnosis": 0.7272727272727273,
+        "medications": 0.9090909090909091
+      }
+    }
+  }
+}

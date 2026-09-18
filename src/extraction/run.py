@@ -3,14 +3,14 @@
 import logging
 
 import hydra
-import pyrootutils
+from pathlib import Path
 from hydra.utils import instantiate
 from omegaconf import DictConfig, OmegaConf
 
 from src.extraction.predictor import EntityPredictor
 
 
-root = pyrootutils.setup_root(__file__, dotenv=True, pythonpath=True)
+root = Path(__file__).resolve().parents[2]
 OmegaConf.register_new_resolver("root", lambda: str(root), replace=True)
 
 logger = logging.getLogger(__name__)

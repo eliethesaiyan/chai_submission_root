@@ -10,5 +10,5 @@ predictor:
   clinical_note: >-
     45 year old male with fever and productive cough for five days.
     Diagnosed with pneumonia. Started on amoxicillin.
-  max_length: 128
+  max_length: 512
   device: auto

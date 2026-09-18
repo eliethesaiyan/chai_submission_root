@@ -1,21 +1,15 @@
-# env 
-# mamba create -n clinical-ai python=3.11.11
-# mamba activate clinical-ai
-#python -m pip install --upgrade pip
-#pip install -r requirements.txt
-
-# DL requirements
+# Python 3.11. CPU wheels are sufficient; CUDA is optional.
 torch==2.6.0
-accelerate>=0.26.0
 transformers==4.48.3
+accelerate==1.14.0
 seqeval==1.2.2
-datasets
-
-# data
 numpy==1.26.4
-pandas==2.2.3
 scikit-learn==1.4.0
-#config 
 hydra-core==1.3.2
 omegaconf==2.3.1
 pyrootutils==1.0.4
+fastapi==0.115.8
+uvicorn==0.34.0
+pydantic==2.13.5
+httpx==0.28.1
+pytest==8.3.4

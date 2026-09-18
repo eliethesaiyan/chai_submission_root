@@ -1,0 +1,89 @@
+{
+  "notes": 50,
+  "guidelines": 19,
+  "age_min": 5,
+  "age_max": 72,
+  "counts": {
+    "sex": {
+      "male": 26,
+      "female": 24
+    },
+    "diagnosis": {
+      "pneumonia": 7,
+      "meningitis": 5,
+      "myocardial infarction": 5,
+      "urinary tract infection": 5,
+      "tuberculosis": 4,
+      "asthma exacerbation": 5,
+      "gastroenteritis": 5,
+      "tonsillitis": 5,
+      "diabetes mellitus": 5,
+      "migraine": 4
+    },
+    "medications": {
+      "amoxicillin": 5,
+      "ceftriaxone": 5,
+      "aspirin": 5,
+      "atorvastatin": 3,
+      "ciprofloxacin": 3,
+      "rifampicin": 4,
+      "isoniazid": 4,
+      "salbutamol": 5,
+      "ors": 5,
+      "azithromycin": 7,
+      "metformin": 5,
+      "paracetamol": 4,
+      "nitrofurantoin": 2
+    },
+    "symptoms": {
+      "fever": 15,
+      "productive cough": 1,
+      "headache": 5,
+      "neck stiffness": 3,
+      "chest pain radiating to left arm": 1,
+      "dysuria": 4,
+      "lower abdominal pain": 1,
+      "cough": 7,
+      "weight loss": 3,
+      "night sweats": 3,
+      "shortness of breath": 4,
+      "wheezing": 5,
+      "vomiting": 5,
+      "diarrhea": 5,
+      "sore throat": 5,
+      "polyuria": 3,
+      "polydipsia": 1,
+      "severe headache": 2,
+      "blurred vision": 3,
+      "chest tightness": 1,
+      "burning urination": 1,
+      "chronic cough": 2,
+      "high blood sugar": 2,
+      "chest pain": 3,
+      "fatigue": 1,
+      "chest discomfort radiating to arm": 1,
+      "frequency": 1,
+      "breathlessness": 1
+    }
+  },
+  "guidelines_without_training_examples": [
+    "anemia",
+    "copd",
+    "epilepsy",
+    "heart failure",
+    "hypertension",
+    "malaria",
+    "otitis media",
+    "sinusitis",
+    "stroke"
+  ],
+  "annotation_source": "Deterministic weak supervision; not clinician-validated ground truth",
+  "normalization": "Lowercase/whitespace normalization for analysis; raw text retained for character offsets. DistilBERT uncased WordPiece normalizes model input.",
+  "challenges": [
+    "Only 50 highly templated notes",
+    "No expert entity labels supplied",
+    "Nine guidelines have no corresponding notes",
+    "Rare or absent negation, tests, doses, and multiple diagnoses",
+    "Suspected diagnoses must not be interpreted as confirmed disease"
+  ]
+}

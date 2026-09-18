@@ -1,0 +1,34 @@
+{
+  "paths": {
+    "annotations": "src/data/annotations.json",
+    "checkpoints": "models/entity_extractor"
+  },
+  "trainer": {
+    "_target_": "src.training.train.EntityTrainer",
+    "annotations_path": "src/data/annotations.json",
+    "output_dir": "models/entity_extractor",
+    "model_name": "distilbert-base-uncased",
+    "labels": [
+      "O",
+      "B-age",
+      "I-age",
+      "B-sex",
+      "I-sex",
+      "B-symptoms",
+      "I-symptoms",
+      "B-diagnosis",
+      "I-diagnosis",
+      "B-medications",
+      "I-medications"
+    ],
+    "seed": 42,
+    "validation_size": 0.2,
+    "max_length": 128,
+    "learning_rate": 2e-05,
+    "batch_size": 8,
+    "num_epochs": 15,
+    "weight_decay": 0.01,
+    "save_total_limit": 2,
+    "model_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be"
+  }
+}

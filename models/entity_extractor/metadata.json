@@ -1,0 +1,19 @@
+{
+  "model_version": "distilbert-clinical-v1-473c169b4cb6",
+  "sha256": "473c169b4cb60621cbc007aa5098366fa0b181ef392d43ed16f72f53f417ba9f",
+  "base_model": "distilbert-base-uncased",
+  "base_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+  "annotation_sha256": "b0ff2d2909dec9eada0de961a0ac394e474dbcffa3d82f200af17ff150f0bb9f",
+  "python": "3.11.11",
+  "label_source": "weak supervision; not clinician validated",
+  "seed": 42,
+  "max_length": 128,
+  "packages": {
+    "torch": "2.6.0",
+    "transformers": "4.48.3",
+    "accelerate": "1.14.0",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.4.0",
+    "seqeval": "1.2.2"
+  }
+}

@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from transformers import AutoTokenizer
 
-from src.preprocessing.preprocess import load_json_file
+from src.preprocessing.utils import load_json_file
 
 
 MAX_LENGTH = 128

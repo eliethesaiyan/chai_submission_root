@@ -1,0 +1,6 @@
+{
+  "model_sha256": "473c169b4cb60621cbc007aa5098366fa0b181ef392d43ed16f72f53f417ba9f",
+  "reproduced_sha256": "473c169b4cb60621cbc007aa5098366fa0b181ef392d43ed16f72f53f417ba9f",
+  "identical_weights": true,
+  "method": "Two CPU training runs from the same pinned base revision, seed, data and configuration"
+}
