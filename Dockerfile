@@ -10,9 +10,11 @@ COPY src ./src
 COPY models/entity_extractor ./models/entity_extractor
 COPY run.sh README.md ./
 RUN test -s models/entity_extractor/model.safetensors \
+    && chmod -R a+rX models/entity_extractor \
     && useradd --create-home --uid 10001 clinical \
     && mkdir -p outputs && chown clinical:clinical outputs
 USER clinical
+RUN python -c "from safetensors import safe_open; f = safe_open('models/entity_extractor/model.safetensors', framework='pt'); assert list(f.keys()), 'Model weights are empty'"
 EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=40s \
     CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3)"
